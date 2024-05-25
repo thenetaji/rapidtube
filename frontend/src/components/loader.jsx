@@ -1,9 +1,16 @@
-function Loader(){
-  return(
-    <button className="border-2 border-teal-500 rounded-lg bg-gradient-to-r from-cyan-400 to-teal-500 text-white w-full h-full p-2 text-xl mt-2 font-serif shadow-lg hover:shadow-xl transition duration-500ease-in-out hover:bg-gradient-to-l hover:from-teal-500 hover:to-cyan-400 active:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-opacity-75">
-      <span className="relative">Loading...</span>
-     </button>
-  )
-}
+ function BouncingLoader(){
+   return(
+     <div className="w-full h-full">
+     <div className="bg-transparent flex justify-center items-center space-x-2 w-full h-full">
+       <span className="sr-only">Loading...</span>
+       <span className="rounded-full bg-black w-8 h-8 animate-pulse [animation-delay:0s]"></span>
+       <span className="rounded-full bg-black w-8 h-8 animate-pulse [animation-delay:-0.15s]"></span>
+       <span className="rounded-full bg-black w-8 h-8 animate-pulse [animation-delay:-0.30s]"></span>
+       <span className="rounded-full bg-black w-8 h-8 animate-pulse [animation-delay:-0.45s]"></span>
+        <span className="rounded-full bg-black w-8 h-8 animate-pulse [animation-delay:-0.60s]"></span>
+     </div>
+   </div>
+ )
+};
 
-export default Loader;
+export default BouncingLoader;

@@ -5,13 +5,11 @@ const path = require("path");
 
 //security packages
 const helmet = require("helmet");
-const xss = require("xss-clean");
 const cors = require("cors");
 const rateLimiter = require("express-rate-limit");
 
 const corsConfig = {
-  origin:"*",
-  optionSuccessStatus:200
+  origin:"*"
 };
 
 //middlewares
@@ -20,13 +18,12 @@ app.use(rateLimiter({
   windowMs:15 * 60 * 1000,
   max:100
 }));
-helmet.contentSecurityPolicy({
+app.use(helmet.contentSecurityPolicy({
     directives: {
       defaultSrc: ["'self'"],
       imgSrc: ["'self'", 'data:', 'https://www.google-analytics.com', 'https://i.ytimg.com'],
     }
-  });
-app.use(xss());
+  }));
 app.use(cors(corsConfig));
 app.use(express.json());
 

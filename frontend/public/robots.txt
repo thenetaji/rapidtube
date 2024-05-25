@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /api
+Allow: *
+
+Sitemap: https://rapidtubepro.web.app/sitemap.xml

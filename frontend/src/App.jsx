@@ -1,13 +1,15 @@
+import { createContext } from "react";
+import { Outlet } from "react-router-dom";
 import Header from "./components/header.jsx";
-import HeroSection from "./components/hero-section.jsx";
-import WrapperContainer from "./components/container.jsx";
+import Footer from "./components/footer.jsx";
 
 function App(){
   return(
-    <WrapperContainer>
-     <Header />
-     <HeroSection />
-    </WrapperContainer>
+    <>
+       <Header />
+       <Outlet />
+       <Footer />
+    </>
   )
 };
 
