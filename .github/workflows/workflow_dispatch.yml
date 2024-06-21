@@ -1,4 +1,4 @@
-name: Deploy to Firebase Hosting on merge
+name: Action Trigger workflow
 
 on:
   push:
@@ -32,16 +32,13 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: /home/runner/work/RapidTube/RapidTube
-
+        working-directory: ./frontend/
       - name: Build the project
         run: npm run build
-        working-directory: /home/runner/work/RapidTube/RapidTube
+        working-directory: ./frontend/
 
       - name: Deploy to Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_RAPIDTUBEPRO }}
           channelId: live
           projectId: rapidtubepro
