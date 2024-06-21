@@ -40,3 +40,4 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_RAPIDTUBEPRO }}
           projectId: rapidtubepro
           channelId: ${{ github.event.pull_request.head.sha }}
+          working-directory: ./frontend/
