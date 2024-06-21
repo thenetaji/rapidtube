@@ -1,0 +1,52 @@
+# This file deploys to Firebase Hosting on pull requests and pushes to branches other than 'main'
+name: Deploy to Firebase Hosting on PR and Branches
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches-ignore:
+      - main
+
+permissions:
+  checks: write
+  contents: read
+  pull-requests: write
+
+jobs:
+  build_and_preview:
+    if: ${{ github.event_name == 'pull_request' || github.ref != 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20.x'
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./frontend/
+
+      - name: Build the project
+        run: npm run build
+        working-directory: ./frontend/
+
+      - name: Debug Firebase Tools version
+        run: npx firebase --version
+
+      - name: Authenticate Firebase
+        run: npx firebase login:ci --no-localhost
+
+      - name: Deploy to Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_RAPIDTUBEPRO }}
+          projectId: rapidtubepro
+          channelId: ${{ github.sha }}
+          entryPoint: ./frontend/
