@@ -20,11 +20,11 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./frontend  # Adjust to your actual frontend directory
+        working-directory: ./frontend/  # Adjust to your actual frontend directory
 
       - name: Build the project
         run: npm run build
-        working-directory: ./frontend  # Adjust to your actual frontend directory
+        working-directory: ./frontend/  # Adjust to your actual frontend directory
 
       - name: Deploy to Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
