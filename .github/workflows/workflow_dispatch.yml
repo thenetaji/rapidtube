@@ -1,7 +1,6 @@
 name: Action Trigger workflow
 
 on:
-  push:
     branches:
       - action-test
   workflow_dispatch:
