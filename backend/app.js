@@ -29,7 +29,7 @@ app.use(express.json());
 
 app.use("/api/v1",routes);
 
-const port = process.env.PORT;
+const port = process.env.PORT || 2626;
 app.listen(port,() => {
-  console.log(`Server is waiting at port ${port}... :)`);
+  console.log(`Server is at port ${port}... :)`);
 });

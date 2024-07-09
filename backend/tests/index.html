@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post Data to Server</title>
+</head>
+<body>
+    <form id="postDataForm">
+        <label for="url">URL:</label>
+        <input type="text" id="url" name="url"><br><br>
+        <label for="itag">itag:</label>
+        <input type="text" id="itag" name="itag"><br><br>
+        <button type="button" onclick="postData()">Submit</button>
+    </form>
+
+    <script>
+function postData() {
+    const url = document.getElementById('url').value;
+    const itag = document.getElementById('itag').value;
+
+    // Prepare data to send
+    const data = {
+        url: url,
+        itag: itag
+    };
+
+    fetch('http://localhost:2626/api/v1/yt/download', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json(); // Parse response body as JSON
+    })
+    .then(data => {
+        console.log('Data processed successfully:', data);
+        // Handle successful response
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+        // Handle error
+    });
+}
+    </script>
+</body>
+</html>
