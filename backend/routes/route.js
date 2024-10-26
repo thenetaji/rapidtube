@@ -1,14 +1,31 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
-const { infoProcessor,
-  downloadProcessor } = require("../controllers/controller.js");
 
-router.get("/", (req,res) => {
-  res.status(0).send(
-   `<h2>Always at your service, Sir</h2>
-    <h1>But sorry,you're not authorized to access this service :(<h1>`);
+//routes
+import youtubeRoute from "./youtube.js";
+
+router.use("/youtube", youtubeRoute);
+router.use("/instagram", notYet);
+router.use("/tiktok", notYet);
+router.use("/twitter", notYet);
+router.use("/facebook", notYet);
+
+function notYet(req, res) {
+  res.status(200).json({
+    status: 404,
+    error: "Working on it!!",
+    message: "",
+    data: "",
+  });
+}
+
+router.get("*", (req, res) => {
+  res.status(404).json({
+    status: 404,
+    error: "You are Lost!!",
+    message: "",
+    data: "",
+  });
 });
-router.post("/yt/search",infoProcessor);//it will process url or query
-router.post("/yt/download",downloadProcessor);//it will process data returned by user
 
-module.exports = router;
+export default router;
