@@ -48,8 +48,8 @@ async function getYoutubeMeta(req, res) {
     const isCache = await getCache(videoId);
     if (isCache !== null && isCache !== undefined) {
       return res.status(200).json({
-       // status: "success",
-       // message: "Successfully fetched content information from cache",
+        status: "success",
+        message: "Successfully fetched content information from cache",
         error: "",
         data: isCache,
       });

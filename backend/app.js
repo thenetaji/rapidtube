@@ -12,6 +12,7 @@ app.use(
   }),
 );
 app.use(helmet());
+app.set("trust proxy",1);
 app.use(
   expressRateLimit({
     windowMs: 60 * 1000,

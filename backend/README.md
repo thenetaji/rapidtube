@@ -15,6 +15,10 @@ This backend can download videos, audios, substitle, thumbnail from any popular 
   - Ytdl-core :- For functionality of YouTube
   - [Yt-search](https://www.npmjs.com/package/yt-search) :- For searching functionality
 
+## Environment variables
+- REDIS_URI: redis uri
+- NODE_ENV : PRODUCTION
+
 ## Working mechanism for YouTube content fetching
 
 - User Input
