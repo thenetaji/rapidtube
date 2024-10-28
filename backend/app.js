@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import expressRateLimit from "express-rate-limit";
 import helmet from "helmet";
-import routes from "./routes/route.js";
+import routes from "./route.js";
 const app = express();
 
 //middlewares
@@ -12,7 +12,7 @@ app.use(
   }),
 );
 app.use(helmet());
-app.set("trust proxy",1);
+app.set("trust proxy", 1);
 app.use(
   expressRateLimit({
     windowMs: 60 * 1000,
@@ -25,7 +25,7 @@ app.use(
 app.use(express.json());
 
 //routes
-app.use("/api/v1", routes);
+app.use("/api", routes);
 
 //server initialization
 const port = process.env.PORT || 2626;

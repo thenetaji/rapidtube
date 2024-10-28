@@ -1,29 +1,10 @@
 import fs from "fs";
 import { getMetaInfo, sortData, downloadContent } from "../service/youtube.js";
 import { saveCache, getCache } from "../db/redis.js";
-import {
-  constructYoutubeVideoURL,
-  extractYoutubeVideoId,
-} from "../utils/url.js";
-
-//file path config
-import { fileURLToPath } from "url";
-import { dirname } from "path";
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+import {} from "../utils/url.js";
 
 async function getYoutubeMeta(req, res) {
-  if (!req.body || Object.keys(req.body).length == 0) {
-    return res.status(500).json({
-      status: "error",
-      error: "Body not found!",
-      message: "",
-      data: {},
-    });
-  }
-  const {
-    payload: { url },
-  } = req.body;
+  const { url } = req.query;
 
   if (!url) {
     return res.status(500).json({
@@ -94,7 +75,7 @@ async function getYoutubeMeta(req, res) {
 
 /*********Download Function*******/
 async function downloadYoutubeContent(req, res) {
-  const { url, code: format_id } = req.query;
+  const { url, format: format_id } = req.query;
 
   if (!url) {
     return res.status(500).json({

@@ -16,6 +16,7 @@ This backend can download videos, audios, substitle, thumbnail from any popular 
   - [Yt-search](https://www.npmjs.com/package/yt-search) :- For searching functionality
 
 ## Environment variables
+
 - REDIS_URI: redis uri
 - NODE_ENV : PRODUCTION
 

@@ -28,7 +28,7 @@ async function saveCache(videoId, meta) {
   });
 }
 
-async function getCache(videoId, meta) {
+async function getCache(videoId) {
   return new Promise(async (resolve, reject) => {
     const client = redis
       .createClient({
