@@ -4,8 +4,10 @@ dotenv.config();
 
 import getHeaders from "../utils/network-config.js";
 
+
 const ytdlp =
-  process.env.NODE_ENV == "PRODUCTION" ? "./venv/bin/yt-dlp" : "ytdlp";
+  process.env.NODE_ENV == "PRODUCTION" || undefined ? "./venv/bin/yt-dlp" : "yt-dlp";
+  //using ytdlp in development while .venv is used in production.I will change it later in docker environment
 
 function getMetaInfo(platform, url) {
   return new Promise((resolve, reject) => {

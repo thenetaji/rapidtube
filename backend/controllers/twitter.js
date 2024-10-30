@@ -1,12 +1,12 @@
-import { extractInstaId } from "../utils/url.js";
+import { extractTwitterId } from "../utils/url.js";
 import getMetaInfo from "../service/meta.js";
 import downloadContent from "../service/download.js";
-import { filterInstaMetaInfo } from "../service/filter.js";
+import { filterTwitterMetaInfo } from "../service/filter.js";
 import { getCache, saveCache } from "../db/redis.js";
 import sanitizeFilename from "../utils/sanitize-filename.js";
 import injectHeaders from "../utils/headers.js";
 
-async function getInstaMeta(req, res) {
+async function getTwitterMeta(req, res) {
   const { url } = req.query;
 
   if (!url) {
@@ -18,7 +18,7 @@ async function getInstaMeta(req, res) {
     });
   }
 
-  const contentId = extractInstaId(url);
+  const contentId = extractTwitterId(url);
 
   try {
     const isCache = await getCache(contentId);
@@ -33,7 +33,7 @@ async function getInstaMeta(req, res) {
 
     const metaInfo = await getMetaInfo("instagram", url);
     //first args is platform name
-    const filteredMetaInfo = await filterInstaMetaInfo(metaInfo);
+    const filteredMetaInfo = await filterTwitterMetaInfo(metaInfo);
 
     const saveToDB = await saveCache(contentId, filteredMetaInfo);
 
@@ -55,7 +55,7 @@ async function getInstaMeta(req, res) {
   }
 }
 
-async function downloadInstaContent(req, res) {
+async function downloadTwitterContent(req, res) {
   const { url } = req.query;
 
   if (!url) {
@@ -68,14 +68,14 @@ async function downloadInstaContent(req, res) {
   }
 
   try {
-    const contentId = await extractInstaId(url);
+    const contentId = await extractTwitterId(url);
     let meta = await getCache(contentId); //cache from redis
 
     /*function to get meta info in download functionality so that if someone invoked download function meta data is available*/
     if (meta == null || meta == undefined) {
       const metaInfo = await getMetaInfo("instagram", url);
       //first args is platform name
-      const filteredMetaInfo = await filterInstaMetaInfo(metaInfo);
+      const filteredMetaInfo = await filterTwitterMetaInfo(metaInfo);
 
       const saveToDB = await saveCache(contentId, filteredMetaInfo);
       meta = filteredMetaInfo;
@@ -87,9 +87,9 @@ async function downloadInstaContent(req, res) {
 
     injectHeaders(res, encodedFilename, "video/mp4", null);
 
-    const contentData = await downloadContent("instagram", url, null, res);
+    const contentData = await downloadContent("twitter", url, null, res);
   } catch (error) {
-    console.log("Error in downloadInstaContent", error);
+    console.log("Error in downloadTwitterContent", error);
     return res.status(500).json({
       status: "error",
       error: "Failed to download",
@@ -99,4 +99,4 @@ async function downloadInstaContent(req, res) {
   }
 }
 
-export { getInstaMeta, downloadInstaContent };
+export { getTwitterMeta, downloadTwitterContent };

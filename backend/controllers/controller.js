@@ -1,13 +1,11 @@
 import { getInstaMeta, downloadInstaContent } from "./instagram.js";
+import { getYoutubeMeta, downloadYoutubeContent } from "./youtube.js";
+import { getTwitterMeta, downloadTwitterContent } from "./twitter.js";
 
 const platformFunctions = {
   instagram: {
     meta: getInstaMeta,
     download: downloadInstaContent,
-  },
-  /**facebook: {
-    meta: getFacebookMeta,
-  /  download: downloadFacebookContent,
   },
   youtube: {
     meta: getYoutubeMeta,
@@ -16,6 +14,10 @@ const platformFunctions = {
   twitter: {
     meta: getTwitterMeta,
     download: downloadTwitterContent,
+  },
+  /**facebook: {
+    meta: getFacebookMeta,
+  /  download: downloadFacebookContent,
   },**/
 };
 

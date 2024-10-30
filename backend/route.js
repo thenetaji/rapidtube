@@ -8,6 +8,10 @@ import { infoHandler, downloadHandler } from "./controllers/controller.js";
 router.get("/meta", infoHandler);
 router.get("/download", downloadHandler);
 
+router.get("/status", (req,res) => {
+  res.status(200).end();
+});
+
 router.get("*", (req, res) => {
   res.status(404).json({
     status: 404,

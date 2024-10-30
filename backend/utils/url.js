@@ -12,7 +12,7 @@ function extractInstaId(url) {
   return match ? match[1] : null;
 }
 
-function extractXId(url) {
+function extractTwitterId(url) {
   const regex = /(?:twitter\.com|x\.com)\/\w+\/status\/(\d+)/;
   const match = url.match(regex);
   return match ? match[1] : null;
@@ -29,4 +29,4 @@ function extractFacebookId(url) {
   return match ? match[1] : null;
 }
 
-export { extractYoutubeId, extractInstaId, extractXId, extractFacebookId };
+export { extractYoutubeId, extractInstaId, extractTwitterId, extractFacebookId };

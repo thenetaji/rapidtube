@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const ytdlp =
-  process.env.NODE_ENV == "PRODUCTION" ? "./venv/bin/yt-dlp" : "ytdlp";
+  process.env.NODE_ENV == "PRODUCTION" || undefined ? "./venv/bin/yt-dlp" : "yt-dlp";
 
 async function downloadContent(platform, url, format, res) {
   //format is only supported for youtube
@@ -19,6 +19,7 @@ async function downloadContent(platform, url, format, res) {
       formatCode,
       "-o",
       "-",
+      "--restrict-filename",
       "--user-agent",
       currentHeaders["User-Agent"],
       "--referer",

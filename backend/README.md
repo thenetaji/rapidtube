@@ -49,3 +49,5 @@ eg. "/api/v1/youtube/meta"
 
 - V1 :- Did lot of work but on ytdl-core but it is not maintained and also don't work
 - V2 :- Using YTDLP a actively maintained library
+- V3 :- Simplified backend structure and created a common route for meta and download.The internal working is that i just invoke specific function according to the platform identified.
+- V3.2.0 :- Added twitter,insta and fixed youtube 
