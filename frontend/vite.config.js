@@ -1,7 +1,16 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import dotenv from "dotenv"
+import { defineConfig } from "vite";
 
 export default defineConfig({
-  plugins: [react()],
-})
+  root: "src",
+  build: {
+    outDir: "../dist",
+    emptyOutDir: true,
+  },
+  server: {
+    open: true,
+  },
+  css: {
+    postcss: "./postcss.config.js",
+  },
+  envDir: "..",
+});
