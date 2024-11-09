@@ -3,12 +3,12 @@
 This tool is designed to help you download content from various social media platforms.
 
 ## Supported Platforms
-- YouTube In progress
-- Instagram Coming soon!
-- Twitter Coming soon!
-- Facebook Coming soon!
-- TikTok Coming soon!
-- Threads Coming soon!
+- YouTube (broken)
+- Instagram 
+- Twitter 
+- Facebook
+- TikTok
+- Threads
 
 ## Technologies Used
 - Frontend:

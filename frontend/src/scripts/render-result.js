@@ -1,5 +1,5 @@
-import RapidTube from "./index.js";
 const mainLogicElement = document.getElementById("main-logic");
+import { downloadContent } from "./index.js";
 
 function renderResult(url, data) {
   const thumbnails = data.thumbnails || [];
@@ -19,16 +19,23 @@ function renderResult(url, data) {
     )
     .join("");
 
-  const formatsOptions = (data.formats || [])
-    .map(format => {
-      const quality =
-        format.videoQuality || format.audioQuality || "Unknown Quality";
-      return `<option value="${format.format_id}">${quality}</option>`;
-    })
-    .join("");
+  const formatOptions = (data) => {
+    if (!data?.formats?.length) {
+      return '<option value="">No formats available</option>';
+    };
+    
+    if(data.info.shortVideo){
+      return `<option value="best" class="disabled">Best Quality (Default)</option>`;
+    };
+    data.formats
+        .map(format => {
+          return `<option value="${format.format_id}">${quality}</option>`;
+          })
+        .join("");
+  };
 
   const duration = data.info?.duration
-    ? `${Math.floor(data.info.duration / 60)}:${Math.floor(String(data.info.duration % 60))}`
+    ? `${Math.floor(data.info.duration / 60)}:${String(Math.floor(data.info.duration % 60)).padStart(2, '0')}`
     : "";
 
   const innerHtml = `
@@ -45,14 +52,10 @@ function renderResult(url, data) {
             loading="eager">
         </picture>
         
-        ${
-          duration
-            ? `
-          <div class="absolute bottom-3 right-3 bg-black/70 text-white px-2 py-1 rounded-md text-sm font-medium backdrop-blur-sm">
+        ${duration ? 
+        `<div class="absolute bottom-3 right-3 bg-black/70 text-white px-2 py-1 rounded-md text-sm font-medium backdrop-blur-sm">
             ${duration}
-          </div>
-        `
-            : ""
+          </div>` : ""
         }
       </div>
       
@@ -71,8 +74,7 @@ function renderResult(url, data) {
             <select 
               class="w-full px-4 py-2.5 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 appearance-none cursor-pointer transition-colors duration-200"
               id="formats-select">
-              <option value="" disabled selected>Choose quality</option>
-              ${formatsOptions}
+              ${formatOptions(data)}
             </select>
             <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
               <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -96,16 +98,14 @@ function renderResult(url, data) {
 
   mainLogicElement.innerHTML = innerHtml;
 
-  const downloadButton = document
-    .getElementById("download-button")
-    .addEventListener("click", e => downloadContent(e));
+  const downloadButton = document.getElementById("download-button");
+  downloadButton.addEventListener("click", handleDownload);
 
-  function downloadContent(e) {
+  function handleDownload(e) {
     e.preventDefault();
     const formatElement = document.getElementById("formats-select");
-    const format = formatElement.value || null; 
-    const app = new RapidTube();
-    app.downloadContent(url, format);
+    const format = formatElement.value;
+    downloadContent(url, format);
   }
 }
 

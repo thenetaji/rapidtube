@@ -9,6 +9,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const webpackConfig = {
+  /*mode: "development",
+  stats: "verbose",
+  devtool: "eval-source-map",*/
   mode: "production",
   entry: {
     index: path.resolve(__dirname, "src", "scripts", "index.js"),
@@ -46,8 +49,8 @@ const webpackConfig = {
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, "src", "public"),
-          to: path.resolve(__dirname, "dist", "public"),
+          from: path.resolve(__dirname, "src","public"),
+          to: path.resolve(__dirname,"dist","public"),
         },
         {
           from: path.resolve(__dirname, "src", "pages"),
