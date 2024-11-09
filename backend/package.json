@@ -1,6 +1,7 @@
 {
   "name": "rapidtube",
-  "version": "3.2.0",
+  "private": true,
+  "version": "4.2.0",
   "type": "module",
   "main": "app.js",
   "scripts": {

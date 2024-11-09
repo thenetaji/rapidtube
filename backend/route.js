@@ -2,18 +2,18 @@ import express from "express";
 const router = express.Router();
 
 //control handlers
-import { infoHandler, downloadHandler } from "./controllers/controller.js";
+import { metaHandler, downloadHandler } from "./controllers/controller.js";
 
 //routes
-router.get("/meta", infoHandler);
+router.get("/meta", metaHandler);
 router.get("/download", downloadHandler);
 
-router.get("/status", (req,res) => {
-  res.status(200).end();
+router.get("/status", (req, res) => {
+  return res.status(200).end();
 });
 
 router.get("*", (req, res) => {
-  res.status(404).json({
+  return res.status(404).json({
     status: 404,
     error: "You are Lost!!",
     message: "",

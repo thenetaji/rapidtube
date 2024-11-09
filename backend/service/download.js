@@ -1,29 +1,22 @@
 import { spawn } from "child_process";
-import getHeaders from "../utils/network-config.js";
 import dotenv from "dotenv";
 dotenv.config();
 
 const ytdlp =
-  process.env.NODE_ENV == "PRODUCTION" || undefined ? "./venv/bin/yt-dlp" : "yt-dlp";
+  process.env.NODE_ENV == "PRODUCTION" || undefined
+    ? "./venv/bin/yt-dlp"
+    : "yt-dlp";
 
-async function downloadContent(platform, url, format, res) {
-  //format is only supported for youtube
+async function downloadContent(url, format_id, res) {
   try {
-    const currentHeaders = getHeaders();
-
-    const formatCode = platform == "youtube" ? format : "best";
-    const refererName = `"https://www.${platform}.com/"`;
-
     const options = [
       "--format",
-      formatCode,
+      format_id,
       "-o",
       "-",
       "--restrict-filename",
       "--user-agent",
-      currentHeaders["User-Agent"],
-      "--referer",
-      refererName,
+      "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
       url,
     ];
 
