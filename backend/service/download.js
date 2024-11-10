@@ -2,10 +2,7 @@ import { spawn } from "child_process";
 import dotenv from "dotenv";
 dotenv.config();
 
-const ytdlp =
-  process.env.NODE_ENV == "PRODUCTION" || undefined
-    ? "./venv/bin/yt-dlp"
-    : "yt-dlp";
+const ytdlp = "yt-dlp";
 
 async function downloadContent(url, format_id, res) {
   try {
