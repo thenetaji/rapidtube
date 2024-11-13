@@ -9,7 +9,7 @@ router.get("/meta", metaHandler);
 router.get("/download", downloadHandler);
 
 router.get("/status", (req, res) => {
-  return res.status(200).end();
+  return res.status(200).end("OK");
 });
 
 router.get("*", (req, res) => {

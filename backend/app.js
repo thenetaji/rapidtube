@@ -6,11 +6,11 @@ import routes from "./route.js";
 const app = express();
 
 //middlewares
-app.use(
-  cors({
-    origin: ["http://localhost:5173", "https://rapidtubepro.web.app"],
-  }),
-);
+const corsOptions = {
+  origin: ["https://rapidtubepro.web.app","https://rapidtubepro.firebase.app"]
+};
+app.use(cors(corsOptions));
+app.options("*",cors(corsOptions));
 app.use(helmet());
 app.set("trust proxy", 1);
 app.use(
