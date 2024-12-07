@@ -27,11 +27,7 @@ const webpackConfig = {
     rules: [
       {
         test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader",
-          "postcss-loader"
-        ],
+        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
       },
     ],
   },
@@ -40,17 +36,16 @@ const webpackConfig = {
       template: path.resolve(__dirname, "src", "index.html"),
       scriptLoading: "defer",
       inject: true,
-      filename: "index.html",
-      chunks: ["index"]
+      chunks: ["index"],
     }),
     new MiniCssExtractPlugin({
-      filename: "[name]-[contenthash].css", 
+      filename: "[name]-[contenthash].css",
     }),
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, "src","public"),
-          to: path.resolve(__dirname,"dist","public"),
+          from: path.resolve(__dirname, "public"),
+          to: path.resolve(__dirname, "dist"),
         },
         {
           from: path.resolve(__dirname, "src", "pages"),

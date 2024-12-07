@@ -14,7 +14,7 @@
   }
 }
 
-@keyframes pulsebg{
+@keyframes pulsebg {
   0% {
     opacity: 0.2;
   }
@@ -35,7 +35,7 @@
   }
 }
 
-@keyframes pulse{
+@keyframes pulse {
   0% {
     transform: scale(1);
   }

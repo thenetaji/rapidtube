@@ -1,7 +1,12 @@
 const mainLogicElement = document.getElementById("main-logic");
 import { downloadContent } from "./index.js";
+import { renderError } from "./index.js";
 
 function renderResult(url, data) {
+  if (Object.values(data).length == 0) {
+    renderError("Failed to fetch");
+    return;
+  }
   const thumbnails = data.thumbnails || [];
   const sortedThumbnails = [...thumbnails].sort(
     (a, b) => b.width * b.height - a.width * a.height,
@@ -19,23 +24,23 @@ function renderResult(url, data) {
     )
     .join("");
 
-  const formatOptions = (data) => {
+  const formatOptions = data => {
     if (!data?.formats?.length) {
       return '<option value="">No formats available</option>';
-    };
-    
-    if(data.info.shortVideo){
+    }
+
+    if (data.info.shortVideo) {
       return `<option value="best" class="disabled">Best Quality (Default)</option>`;
-    };
+    }
     data.formats
-        .map(format => {
-          return `<option value="${format.format_id}">${quality}</option>`;
-          })
-        .join("");
+      .map(format => {
+        return `<option value="${format.format_id}">${quality}</option>`;
+      })
+      .join("");
   };
 
   const duration = data.info?.duration
-    ? `${Math.floor(data.info.duration / 60)}:${String(Math.floor(data.info.duration % 60)).padStart(2, '0')}`
+    ? `${Math.floor(data.info.duration / 60)}:${String(Math.floor(data.info.duration % 60)).padStart(2, "0")}`
     : "";
 
   const innerHtml = `
@@ -52,10 +57,12 @@ function renderResult(url, data) {
             loading="eager">
         </picture>
         
-        ${duration ? 
-        `<div class="absolute bottom-3 right-3 bg-black/70 text-white px-2 py-1 rounded-md text-sm font-medium backdrop-blur-sm">
+        ${
+          duration
+            ? `<div class="absolute bottom-3 right-3 bg-black/70 text-white px-2 py-1 rounded-md text-sm font-medium backdrop-blur-sm">
             ${duration}
-          </div>` : ""
+          </div>`
+            : ""
         }
       </div>
       

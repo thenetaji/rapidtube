@@ -2,9 +2,18 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   root: "src",
+  publicDir: "../public",
   build: {
-    outDir: "../build",
+    outDir: "dist",
     emptyOutDir: true,
+    rollupOptions: {
+      input: {
+        main: "./src/index.html",
+        about: "./src/pages/about.html",
+        disclaimer: "./src/pages/disclaimer.html",
+        contact: "./src/pages/contact.html",
+      },
+    },
   },
   server: {
     open: true,
@@ -12,5 +21,4 @@ export default defineConfig({
   css: {
     postcss: "./postcss.config.js",
   },
-  envDir: "..",
 });
