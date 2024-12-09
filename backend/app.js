@@ -7,10 +7,10 @@ const app = express();
 
 //middlewares
 const corsOptions = {
-  origin: ["https://rapidtubepro.web.app","https://rapidtubepro.firebase.app"]
+  origin: ["https://rapidtubepro.web.app", "https://rapidtubepro.firebase.app"],
 };
 app.use(cors(corsOptions));
-app.options("*",cors(corsOptions));
+app.options("*", cors(corsOptions));
 app.use(helmet());
 app.set("trust proxy", 1);
 app.use(

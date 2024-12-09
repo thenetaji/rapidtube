@@ -2,8 +2,6 @@ import { spawn } from "child_process";
 import dotenv from "dotenv";
 dotenv.config();
 
-const ytdlp = "yt-dlp";
-
 async function downloadContent(url, format_id, res) {
   try {
     const options = [
@@ -17,7 +15,7 @@ async function downloadContent(url, format_id, res) {
       url,
     ];
 
-    const shell = spawn(ytdlp, options);
+    const shell = spawn("yt-dlp", options);
 
     let errorOutput = "";
 

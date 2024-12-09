@@ -13,7 +13,7 @@ function injectHeaders(res, meta, __format) {
       size = meta.formats.filter(item => item.format_id == __format)[0]
         .filesize;
     }
-    if(size == undefined || size == null){
+    if (size == undefined || size == null) {
       size = null;
     }
     return size;
@@ -36,7 +36,7 @@ function injectHeaders(res, meta, __format) {
         type = "video/" + format[0].extension;
       }
     }
-    if(type == undefined || type == null || !type){
+    if (type == undefined || type == null || !type) {
       type = "video/mp4";
     }
     return type;

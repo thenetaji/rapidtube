@@ -1,11 +1,11 @@
 function filter(meta = {}) {
   const thumbnails = meta.thumbnails
-  .filter(item => item.width != null && item.height != null)
-  .map(item => ({
-    url: item.url,
-    width: item.width || null,
-    height: item.height || null,
-  }));
+    .filter(item => item.width != null && item.height != null)
+    .map(item => ({
+      url: item.url,
+      width: item.width || null,
+      height: item.height || null,
+    }));
 
   const info = {
     id: meta.id,
@@ -19,7 +19,7 @@ function filter(meta = {}) {
     .filter(item => {
       return (
         (item.filesize || item.filesize_approx) &&
-       (item.vcodec == "none" || item.acodec != "none")
+        (item.vcodec == "none" || item.acodec != "none")
       );
     })
     .map(item => ({

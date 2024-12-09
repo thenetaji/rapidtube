@@ -1,7 +1,5 @@
 import { spawn } from "child_process";
 
-const ytdlp = "yt-dlp";
-
 function getMetaInfo(url) {
   return new Promise((resolve, reject) => {
     const options = [
@@ -12,7 +10,7 @@ function getMetaInfo(url) {
       url,
     ];
 
-    const shell = spawn(ytdlp, options);
+    const shell = spawn("yt-dlp", options);
     let output = "";
     let errorOutput = "";
 
