@@ -113,18 +113,25 @@
     <!-- Languages -->
     <meta http-equiv="Content-Language" content="en" />
 
-    <!-- Google tag (gtag.js) -->
+    <script>
+      partytown = {
+        lib: "/~partytown/",
+        debug: true,
+      };
+    </script>
+
+    <script src="/~partytown/partytown.js" async></script>
+
     <script
       type="text/partytown"
-      async
       src="https://www.googletagmanager.com/gtag/js?id=G-VGJV08MMGW"
     ></script>
+
     <script type="text/partytown">
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-VGJV08MMGW');
+      gtag("js", new Date());
+      gtag("config", "G-VGJV08MMGW");
     </script>
     <!--JSON LD-->
     <script type="application/ld+json">

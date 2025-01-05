@@ -6,10 +6,11 @@
   "scripts": {
     "dev": "vite dev",
     "preview:vite": "vite preview",
-    "build:vite": "vite build",
+    "build:vite": "npm run partytown && vite build",
     "dev:webpack": "webpack serve",
-    "build": "webpack build",
-    "style": "npx prettier . --write"
+    "build": "npm run partytown && webpack build",
+    "style": "npx prettier . --write",
+    "partytown": "partytown copylib public/~partytown"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
@@ -30,7 +31,7 @@
     "webpack-dev-server": "^5.1.0"
   },
   "dependencies": {
-    "@builder.io/partytown": "^0.10.2",
+    "@qwik.dev/partytown": "^0.11.0",
     "dotenv": "^16.4.5"
   }
 }
