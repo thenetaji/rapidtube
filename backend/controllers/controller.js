@@ -39,7 +39,7 @@ async function metaHandler(req, res) {
     });
   };
   
-    let meta = await getMetaInfo(url);
+    meta = await getMetaInfo(url);
     const filteredData = await filter(meta);
 
     await saveCache(id, filteredData);
@@ -83,6 +83,7 @@ async function downloadHandler(req, res) {
   }
   
   const id = await extractId(url);
+    
     let meta = await getCache(id);
     if (meta == null || meta == undefined) {
       const metaData = await getMetaInfo(url);

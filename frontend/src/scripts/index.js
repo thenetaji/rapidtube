@@ -1,6 +1,5 @@
 import resultRenderer from "./render-result.js";
 import loading from "./loading.js";
-import "../index.css";
 
 const API_BASE_URL = "https://rapidtube.onrender.com/api";
 
@@ -16,8 +15,8 @@ const fetchMetaContent = async url => {
   }
 };
 
-const downloadContent = (url, format) => {
-  window.location.href = `${API_BASE_URL}/download?url=${url}&format=${format}`;
+const downloadContent = (url) => {
+  window.location.href = `${API_BASE_URL}/download?url=${url}`;
 };
 
 const renderError = error => {

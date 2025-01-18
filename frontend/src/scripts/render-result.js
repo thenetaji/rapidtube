@@ -1,6 +1,7 @@
-const mainLogicElement = document.getElementById("main-logic");
 import { downloadContent } from "./index.js";
 import { renderError } from "./index.js";
+
+const mainLogicElement = document.getElementById("main-logic");
 
 function renderResult(url, data) {
   if (Object.values(data).length == 0) {
@@ -23,21 +24,6 @@ function renderResult(url, data) {
         >`,
     )
     .join("");
-
-  const formatOptions = data => {
-    if (!data?.formats?.length) {
-      return '<option value="">No formats available</option>';
-    }
-
-    if (data.info.shortVideo) {
-      return `<option value="best" class="disabled">Best Quality (Default)</option>`;
-    }
-    data.formats
-      .map(format => {
-        return `<option value="${format.format_id}">${quality}</option>`;
-      })
-      .join("");
-  };
 
   const duration = data.info?.duration
     ? `${Math.floor(data.info.duration / 60)}:${String(Math.floor(data.info.duration % 60)).padStart(2, "0")}`
@@ -81,7 +67,7 @@ function renderResult(url, data) {
             <select 
               class="w-full px-4 py-2.5 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 appearance-none cursor-pointer transition-colors duration-200"
               id="formats-select">
-              ${formatOptions(data)}
+              Best
             </select>
             <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
               <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -110,9 +96,7 @@ function renderResult(url, data) {
 
   function handleDownload(e) {
     e.preventDefault();
-    const formatElement = document.getElementById("formats-select");
-    const format = formatElement.value;
-    downloadContent(url, format);
+    downloadContent(url);
   }
 }
 

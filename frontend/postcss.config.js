@@ -1,10 +1,10 @@
 export default {
   plugins: {
     "postcss-import": {},
-    tailwindcss: {},
+    "tailwindcss": {},
     "postcss-preset-env": {},
-    autoprefixer: {},
-    cssnano: {},
+    "autoprefixer": {},
+    "cssnano": {},
   },
 };
 

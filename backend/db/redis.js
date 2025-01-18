@@ -12,7 +12,7 @@ async function saveCache(videoId, meta) {
       .on("error", err => {
         console.log(err);
         reject("Error from DB", err);
-        new Error("Can't connect to database");
+        throw new Error("Can't connect to database");
       });
 
     try {
@@ -37,7 +37,7 @@ async function getCache(videoId) {
       .on("error", err => {
         console.log(err);
         reject(err);
-        new Error("Can't connect to database");
+        throw new Error("Can't connect to database");
       });
 
     try {

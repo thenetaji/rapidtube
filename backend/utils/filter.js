@@ -22,16 +22,8 @@ function filter(meta = {}) {
       );
     })
     .map(item => ({
-      format_id: item.format_id,
       extension: item.ext,
-      filesize: item.filesize || item.filesize_approx,
-      audioOnly: item.vbr === 0,
-      resolution: item.resolution,
-      videoQuality: item.format_note || null,
-      audioQuality:
-        item.abr && item.abr !== 0 ? Math.floor(item.abr) + "kbps" : null,
-      vcodec: item.vcodec,
-      acodec: item.acodec,
+      filesize: item.filesize || item.filesize_approx
     }));
 
   return {

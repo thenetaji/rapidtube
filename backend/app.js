@@ -11,8 +11,8 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 app.options("*", cors(corsOptions));
-app.use(helmet());
 app.set("trust proxy", 1);
+app.use(helmet());
 app.use(
   expressRateLimit({
     windowMs: 60 * 1000,

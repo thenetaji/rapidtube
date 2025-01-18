@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en" class="dark">
   <head>
+    <link rel="stylesheet" href="./src/index.css" />
     <meta charset="UTF-8" />
     <meta
       name="viewport"
@@ -116,7 +117,6 @@
     <script>
       partytown = {
         lib: "/~partytown/",
-        debug: true,
       };
     </script>
 
@@ -151,22 +151,22 @@
     JAVASCRIPT ISN'T ENABLED ON YOUR BROWSER. Please consider enabling it... :)
   </noscript>
   <body class="rapidtube">
-    <div
+
+    <div id="root" class="relative min-h-screen p-2 space-y-4 overflow-x-hidden">
+          <div
       class="fixed inset-0 -z-10 h-full w-full bg-black bg-[linear-gradient(to_right,#1a1a1a_1px,transparent_1px),linear-gradient(to_bottom,#1a1a1a_1px,transparent_1px)] bg-[size:14px_24px]"
     >
       <div
-        class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-teal-400 opacity-20 blur-[100px] pulsebg-animation"
+        class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-full rounded-full bg-teal-400 opacity-20 blur-[100px] pulsebg-animation"
       ></div>
       <div
-        class="absolute left-60 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-fuchsia-600 opacity-20 blur-[100px] pulsebg-animation"
+        class="absolute left-60 right-0 top-0 -z-10 m-auto h-[310px] w-full rounded-full bg-fuchsia-600 opacity-20 blur-[100px] pulsebg-animation"
       ></div>
     </div>
 
     <div
       class="absolute left-60 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-indigo-600 opacity-10 blur-[100px] pulsebg-animation"
     ></div>
-
-    <div id="root" class="relative min-h-screen p-2 space-y-4">
       <header
         class="sticky top-0 p-2 z-50 backdrop-blur border border-[rgba(255,255,255,0.2)] rounded-xl"
       >
@@ -372,7 +372,7 @@
         </section>
       </main>
       <footer class="mt-20 border-t border-gray-200 rounded">
-        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl py-12 px-4 sm:px-6 lg:px-8">
           <nav class="flex flex-wrap justify-center gap-6 mb-8">
             <a
               href="/pages/disclaimer.html"
@@ -396,5 +396,6 @@
         </div>
       </footer>
     </div>
+  <script type="module" src="./src/scripts/index.js"></script>
   </body>
 </html>

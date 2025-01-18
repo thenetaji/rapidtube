@@ -22,7 +22,6 @@ Uses docker for ytdlp support on cloud providers and redis for cache
 Clone the repository:
 
 git clone https://github.com/username/rapidtube-downloader.git
-cd rapidtube-downloader
 
 Backend Setup:
 

@@ -11,28 +11,19 @@ function injectHeaders(res, meta, __format) {
     return size;
   };
 
-  const contentType = () => {
-    //not efficient i know but i am in hurry now!!
-    let type;
-    if (meta.info.shortVideo) {
-      if (meta.info.audioOnly) {
-        type = "audio/" + meta.formats[0].extension;
-      } else {
-        type = "video/" + meta.formats.extension;
-      }
-    } else {
-      let format = meta.formats.filter(item => item.format_id == __format);
-      if (meta.info.audioOnly) {
-        type = "audio/" + format[0].extension;
-      } else {
-        type = "video/" + format[0].extension;
-      }
-    }
-    if (type == undefined || type == null || !type) {
-      type = "video/mp4";
-    }
-    return type;
-  };
+  const contentType = (meta, __format) => {
+  if (!meta || !meta.formats || !meta.info) {
+    return "video/mp4";
+  }
+
+  const format = meta.formats.find(item => item.format_id === __format);
+  if (!format) {
+    return "video/mp4";
+  }
+
+  const extension = format.extension || "mp4";
+  return meta.info.audioOnly ? `audio/${extension}` : `video/${extension}`;
+};
 
   res.setHeader(
     "Content-Disposition",
