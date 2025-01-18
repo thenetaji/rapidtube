@@ -15,4 +15,9 @@ function extractId(videoUrl) {
   });
 }
 
-export default extractId;
+function isYouTubeURL(url) {
+  const youtubeRegex = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)(\/.*)?$/;
+  return youtubeRegex.test(url);
+};
+
+export { extractId,isYouTubeURL };

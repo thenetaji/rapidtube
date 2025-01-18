@@ -1,12 +1,10 @@
 import { spawn } from "child_process";
-import dotenv from "dotenv";
-dotenv.config();
 
 async function downloadContent(url, format_id, res) {
   try {
     const options = [
       "--format",
-      format_id,
+      "best",
       "-o",
       "-",
       "--restrict-filename",

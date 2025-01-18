@@ -2,13 +2,33 @@ import getMetaInfo from "../service/meta.js";
 import downloadContent from "../service/download.js";
 import injectHeaders from "../utils/headers.js";
 import { saveCache, getCache } from "../db/redis.js";
-import extractId from "../utils/url.js";
+import { extractId,isYouTubeURL } from "../utils/url.js";
 import filter from "../utils/filter.js";
 
 async function metaHandler(req, res) {
   const { url } = req.query;
-  const id = await extractId(url);
+  
+  try {
+  if (!url) {
+    return res.status(400).json({
+      status: 400,
+      message: "Invalid request: URL is required",
+      error: "Missing URL",
+      data: null,
+    });
+  }
 
+  if (isYouTubeURL(url)) {
+    return res.status(400).json({
+      status: 400,
+      message: "Youtube is not supported from 2025",
+      error: "YouTube URL is not supported anymore",
+      data: null,
+    });
+  }
+  
+  const id = await extractId(url);
+  
   let meta = await getCache(id);
   if (meta != undefined) {
     return res.status(200).json({
@@ -17,10 +37,9 @@ async function metaHandler(req, res) {
       error: "",
       data: meta,
     });
-  }
-
-  try {
-    meta = await getMetaInfo(url);
+  };
+  
+    let meta = await getMetaInfo(url);
     const filteredData = await filter(meta);
 
     await saveCache(id, filteredData);
@@ -31,14 +50,39 @@ async function metaHandler(req, res) {
       data: filteredData,
     });
   } catch (error) {
-    console.log("error in fetching meta", error);
+    console.error("error in fetching meta", error);
+    return res.status(500).json({
+      status: 500,
+      message: "An error occured",
+      error: "Error " + error.message,
+      data: null,
+    });
   }
 }
 
 async function downloadHandler(req, res) {
-  const { url, format: format_id } = req.query;
-  const id = await extractId(url);
   try {
+  const { url } = req.query;
+  
+  if (!url) {
+    return res.status(400).json({
+      status: 400,
+      message: "Invalid request: URL is required",
+      error: "Missing URL",
+      data: null,
+    });
+  }
+
+  if (isYouTubeURL(url)) {
+    return res.status(400).json({
+      status: 400,
+      message: "Youtube is not supported from 2025",
+      error: "YouTube URL is not supported anymore",
+      data: null,
+    });
+  }
+  
+  const id = await extractId(url);
     let meta = await getCache(id);
     if (meta == null || meta == undefined) {
       const metaData = await getMetaInfo(url);
@@ -47,27 +91,17 @@ async function downloadHandler(req, res) {
       await saveCache(id, filteredData);
     }
 
-    if (!meta.info.shortVideo && format_id) {
-      const isValidFormat = meta.formats.some(
-        item => item.format_id == format_id,
-      );
-      if (!isValidFormat) {
-        return res.status(200).json({
-          status: 404,
-          message: "Format not found",
-          error: "Not found",
-          data: "",
-        });
-      }
-    }
-
-    const __format = meta.info.shortVideo ? "best" : format_id;
-
     injectHeaders(res, meta, __format);
 
     const contentData = await downloadContent(url, __format, res);
   } catch (error) {
-    console.log("error in downloading content", error);
+    console.error("error in downloading content", error);
+    return res.status(500).json({
+      status: 500,
+      message: "An error occured",
+      error: "Error " + error.message,
+      data: null,
+    });
   }
 }
 

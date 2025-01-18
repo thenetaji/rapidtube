@@ -6,16 +6,8 @@ function injectHeaders(res, meta, __format) {
   );
 
   const contentSize = () => {
-    let size;
-    if (__format == "best") {
-      size = meta.formats.filesize;
-    } else {
-      size = meta.formats.filter(item => item.format_id == __format)[0]
+    let size = meta.formats.filter(item => item.format_id == __format)[0]
         .filesize;
-    }
-    if (size == undefined || size == null) {
-      size = null;
-    }
     return size;
   };
 

@@ -12,7 +12,6 @@ function filter(meta = {}) {
     title: meta.title,
     filename: meta.filename,
     duration: meta.duration,
-    shortVideo: Math.floor(meta.duration) < 300,
   };
 
   const formats = meta.formats
