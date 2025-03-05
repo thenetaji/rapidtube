@@ -1,0 +1,1537 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      TikVid Pro - Download TikTok Videos Without Watermark | HD Quality
+    </title>
+
+    <!-- Meta tags for SEO -->
+    <meta
+      name="description"
+      content="TikVid Pro offers the fastest and most reliable way to download TikTok videos without watermark in HD quality. Save your favorite TikTok content easily and for free."
+    />
+    <meta
+      name="keywords"
+      content="TikTok downloader, download TikTok videos, TikTok without watermark, save TikTok videos, HD TikTok download"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Tailwind configuration -->
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                DEFAULT: "#FF3B5C",
+                dark: "#E01D41",
+                light: "#FF6B85",
+              },
+              secondary: {
+                DEFAULT: "#25F4EE",
+                dark: "#00D2CA",
+                light: "#72F7F3",
+              },
+              darkbg: {
+                DEFAULT: "#121212",
+                lighter: "#1E1E1E",
+                card: "#252525",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              display: ["Montserrat", "sans-serif"],
+            },
+            animation: {
+              "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+              float: "float 3s ease-in-out infinite",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-10px)" },
+              },
+            },
+            boxShadow: {
+              glow: "0 0 15px 2px rgba(37, 244, 238, 0.3)",
+              "glow-pink": "0 0 15px 2px rgba(255, 59, 92, 0.3)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      /* Custom gradient animation */
+      @keyframes gradient-shift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .animate-gradient {
+        background-size: 200% 200%;
+        animation: gradient-shift 5s ease infinite;
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #1e1e1e;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #ff3b5c;
+        border-radius: 5px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #e01d41;
+      }
+
+      /* Removing autofill background color */
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus {
+        -webkit-text-fill-color: white;
+        -webkit-box-shadow: 0 0 0px 1000px #252525 inset;
+        transition: background-color 5000s ease-in-out 0s;
+      }
+    </style>
+  </head>
+  <body class="bg-darkbg text-white font-sans min-h-screen flex flex-col">
+    <!-- Navigation -->
+    <nav
+      class="bg-darkbg-lighter border-b border-gray-800 py-4 px-6 md:px-10 sticky top-0 z-50"
+    >
+      <div class="container mx-auto flex justify-between items-center">
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+          <div
+            class="h-10 w-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center"
+          >
+            <i class="fas fa-arrow-down text-white text-lg"></i>
+          </div>
+          <a href="#" class="font-display font-bold text-xl md:text-2xl">
+            Tik<span class="text-primary">Vid</span>
+            <span class="text-secondary">Pro</span>
+          </a>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a
+            href="#how-it-works"
+            class="hover:text-secondary transition-colors duration-300"
+            >How It Works</a
+          >
+          <a
+            href="#features"
+            class="hover:text-secondary transition-colors duration-300"
+            >Features</a
+          >
+          <a
+            href="#faq"
+            class="hover:text-secondary transition-colors duration-300"
+            >FAQ</a
+          >
+          <a
+            href="#contact"
+            class="hover:text-secondary transition-colors duration-300"
+            >Contact</a
+          >
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden text-white focus:outline-none" id="mobile-menu-button">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div class="hidden bg-darkbg-card fixed inset-0 z-40 pt-24 px-6 py-8">
+      <div class="flex flex-col space-y-6 text-center text-lg">
+        <a
+          href="#how-it-works"
+          class="py-2 hover:text-secondary transition-colors duration-300"
+          >How It Works</a
+        >
+        <a
+          href="#features"
+          class="py-2 hover:text-secondary transition-colors duration-300"
+          >Features</a
+        >
+        <a
+          href="#faq"
+          class="py-2 hover:text-secondary transition-colors duration-300"
+          >FAQ</a
+        >
+        <a
+          href="#contact"
+          class="py-2 hover:text-secondary transition-colors duration-300"
+          >Contact</a
+        >
+        <button class="absolute top-6 right-6 text-white focus:outline-none">
+          <i class="fas fa-times text-2xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+<section class="relative overflow-hidden bg-gradient-to-br from-darkbg to-darkbg-lighter py-16 md:py-24">
+  <div class="container mx-auto px-6 md:px-10 relative z-10">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="text-center md:text-left">
+        <h1 class="font-display font-bold text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight">
+          Download <span class="text-primary">TikTok</span> Videos <br />
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-secondary to-primary animate-gradient">Without Watermark</span>
+        </h1>
+        <p class="text-gray-300 text-lg md:text-xl mb-8 max-w-lg mx-auto md:mx-0">
+          The fastest and most reliable way to save your favorite TikTok
+          content in HD quality. No registration required, 100% free!
+        </p>
+
+        <div class="relative max-w-2xl mx-auto md:mx-0">
+          <div class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-xl blur-md opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse-slow"></div>
+          <div class="relative bg-darkbg-card rounded-xl p-1">
+            <form id="download-form" class="flex flex-col md:flex-row">
+              <input
+                type="text"
+                placeholder="Paste TikTok video URL here..."
+                class="flex-grow bg-darkbg-lighter rounded-lg md:rounded-r-none px-4 py-4 focus:outline-none focus:ring-2 focus:ring-secondary text-white placeholder-gray-400"
+                required
+              />
+              <button
+                type="submit"
+                class="mt-2 md:mt-0 bg-gradient-to-r from-primary to-secondary hover:from-primary-dark hover:to-secondary-dark text-white font-bold py-4 px-8 md:rounded-l-none rounded-lg transition-all duration-300 hover:shadow-glow"
+              >
+                <span class="flex items-center justify-center">
+                  <span>Download Now</span>
+                  <i class="fas fa-arrow-right ml-2"></i>
+                </span>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Updated feature points section -->
+        <div class="mt-6 text-gray-400 text-sm flex flex-wrap justify-center md:justify-start">
+          <div class="flex items-center mr-4 mb-2">
+            <i class="fas fa-check-circle text-secondary mr-2"></i>
+            <span>No Watermark</span>
+          </div>
+          <div class="flex items-center mr-4 mb-2">
+            <i class="fas fa-check-circle text-secondary mr-2"></i>
+            <span>HD Quality</span>
+          </div>
+          <div class="flex items-center mb-2">
+            <i class="fas fa-check-circle text-secondary mr-2"></i>
+            <span>No Login Required</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hidden md:block relative ml-20">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary-dark/20 to-secondary-dark/20 rounded-2xl blur-xl"></div>
+        <div class="relative animate-float">
+          <div class="relative w-[280px] mx-auto h-[500px] bg-darkbg-card rounded-3xl p-3 border border-gray-800 shadow-2xl">
+            <div class="absolute top-2 left-1/2 transform -translate-x-1/2 h-4 w-20 bg-darkbg-lighter rounded-full"></div>
+            <div class="w-full h-full rounded-2xl overflow-hidden relative">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="text-center">
+                  <div class="w-16 h-16 mx-auto rounded-full bg-primary/20 flex items-center justify-center mb-4">
+                    <i class="fas fa-arrow-down text-primary text-2xl"></i>
+                  </div>
+                  <p class="text-white font-bold">Download Videos</p>
+                  <p class="text-gray-400 text-sm mt-2">
+                    Without Watermark
+                  </p>
+                </div>
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-darkbg-lighter to-transparent"></div>
+            </div>
+          </div>
+          <div class="absolute top-5 right-5 w-24 h-24 bg-secondary rounded-full blur-3xl opacity-20"></div>
+          <div class="absolute bottom-10 left-5 w-32 h-32 bg-primary rounded-full blur-3xl opacity-20"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Background elements -->
+  <div class="absolute top-10 left-10 w-64 h-64 bg-primary rounded-full mix-blend-multiply filter blur-3xl opacity-5"></div>
+  <div class="absolute bottom-10 right-10 w-64 h-64 bg-secondary rounded-full mix-blend-multiply filter blur-3xl opacity-5"></div>
+</section>
+
+    <!-- Trust Indicators -->
+    <section class="bg-darkbg-lighter py-10 border-y border-gray-800">
+      <div class="container mx-auto px-6 md:px-10">
+        <div
+          class="flex flex-wrap justify-center md:justify-between items-center gap-8"
+        >
+          <div class="flex items-center">
+            <div
+              class="h-12 w-12 rounded-full bg-darkbg-card flex items-center justify-center mr-3"
+            >
+              <i class="fas fa-bolt text-secondary text-xl"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg">Lightning Fast</h3>
+              <p class="text-gray-400 text-sm">Downloads in seconds</p>
+            </div>
+          </div>
+
+          <div class="flex items-center">
+            <div
+              class="h-12 w-12 rounded-full bg-darkbg-card flex items-center justify-center mr-3"
+            >
+              <i class="fas fa-shield-alt text-secondary text-xl"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg">100% Safe</h3>
+              <p class="text-gray-400 text-sm">No data collection</p>
+            </div>
+          </div>
+
+          <div class="flex items-center">
+            <div
+              class="h-12 w-12 rounded-full bg-darkbg-card flex items-center justify-center mr-3"
+            >
+              <i class="fas fa-medal text-secondary text-xl"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg">High Quality</h3>
+              <p class="text-gray-400 text-sm">Full HD resolution</p>
+            </div>
+          </div>
+
+          <div class="flex items-center">
+            <div
+              class="h-12 w-12 rounded-full bg-darkbg-card flex items-center justify-center mr-3"
+            >
+              <i class="fas fa-infinity text-secondary text-xl"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg">Unlimited</h3>
+              <p class="text-gray-400 text-sm">No download limits</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it Works Section -->
+    <section id="how-it-works" class="py-20 bg-darkbg">
+      <div class="container mx-auto px-6 md:px-10">
+        <div class="text-center mb-16">
+          <h2 class="font-display font-bold text-3xl md:text-4xl mb-4">
+            How <span class="text-primary">It Works</span>
+          </h2>
+          <p class="text-gray-400 max-w-2xl mx-auto">
+            Download your favorite TikTok videos in three simple steps. No
+            technical knowledge required!
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Step 1 -->
+          <div
+            class="bg-darkbg-lighter rounded-2xl p-8 relative transform transition-all duration-300 hover:-translate-y-2 hover:shadow-glow"
+          >
+            <div
+              class="absolute -top-5 -left-5 w-14 h-14 bg-primary rounded-full flex items-center justify-center text-xl font-bold shadow-lg"
+            >
+              1
+            </div>
+            <div class="flex flex-col items-center text-center">
+              <div
+                class="w-20 h-20 rounded-full bg-darkbg-card flex items-center justify-center mb-6"
+              >
+                <i class="fas fa-link text-secondary text-3xl"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Copy Video Link</h3>
+              <p class="text-gray-400">
+                Open TikTok app or website, tap "Share" on the video you want to
+                download, then copy its URL.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div
+            class="bg-darkbg-lighter rounded-2xl p-8 relative transform transition-all duration-300 hover:-translate-y-2 hover:shadow-glow"
+          >
+            <div
+              class="absolute -top-5 -left-5 w-14 h-14 bg-secondary rounded-full flex items-center justify-center text-xl font-bold shadow-lg"
+            >
+              2
+            </div>
+            <div class="flex flex-col items-center text-center">
+              <div
+                class="w-20 h-20 rounded-full bg-darkbg-card flex items-center justify-center mb-6"
+              >
+                <i class="fas fa-paste text-secondary text-3xl"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Paste URL</h3>
+              <p class="text-gray-400">
+                Paste the TikTok video link into the input box above and click
+                "Download Now".
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div
+            class="bg-darkbg-lighter rounded-2xl p-8 relative transform transition-all duration-300 hover:-translate-y-2 hover:shadow-glow"
+          >
+            <div
+              class="absolute -top-5 -left-5 w-14 h-14 bg-primary rounded-full flex items-center justify-center text-xl font-bold shadow-lg"
+            >
+              3
+            </div>
+            <div class="flex flex-col items-center text-center">
+              <div
+                class="w-20 h-20 rounded-full bg-darkbg-card flex items-center justify-center mb-6"
+              >
+                <i class="fas fa-download text-secondary text-3xl"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Download Video</h3>
+              <p class="text-gray-400">
+                Choose your desired quality and format, then save the video
+                directly to your device.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-darkbg-lighter">
+      <div class="container mx-auto px-6 md:px-10">
+        <div class="text-center mb-16">
+          <h2 class="font-display font-bold text-3xl md:text-4xl mb-4">
+            Premium <span class="text-primary">Features</span>
+          </h2>
+          <p class="text-gray-400 max-w-2xl mx-auto">
+            Our TikTok downloader offers a range of premium features, completely
+            free of charge.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Feature 1 -->
+          <div
+            class="bg-darkbg rounded-2xl p-8 transition-all duration-300 hover:shadow-md"
+          >
+            <div
+              class="bg-gradient-to-br from-primary to-secondary rounded-xl w-14 h-14 flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-ban text-white text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">No Watermark</h3>
+            <p class="text-gray-400">
+              Remove TikTok watermark automatically from all downloaded videos
+              for a clean, professional look.
+            </p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div
+            class="bg-darkbg rounded-2xl p-8 transition-all duration-300 hover:shadow-md"
+          >
+            <div
+              class="bg-gradient-to-br from-primary to-secondary rounded-xl w-14 h-14 flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-mobile-alt text-white text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Mobile Compatible</h3>
+            <p class="text-gray-400">
+              Works perfectly on all devices - download videos on your phone,
+              tablet, or computer.
+            </p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div
+            class="bg-darkbg rounded-2xl p-8 transition-all duration-300 hover:shadow-md"
+          >
+            <div
+              class="bg-gradient-to-br from-primary to-secondary rounded-xl w-14 h-14 flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-tachometer-alt text-white text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Fast Processing</h3>
+            <p class="text-gray-400">
+              Advanced servers process your download requests in seconds, no
+              matter the video length.
+            </p>
+          </div>
+
+          <!-- Feature 4 -->
+          <div
+            class="bg-darkbg rounded-2xl p-8 transition-all duration-300 hover:shadow-md"
+          >
+            <div
+              class="bg-gradient-to-br from-primary to-secondary rounded-xl w-14 h-14 flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-photo-video text-white text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Multiple Formats</h3>
+            <p class="text-gray-400">
+              Download TikTok videos in various formats including MP4, WebM, and
+              MP3 for audio only.
+            </p>
+          </div>
+
+          <!-- Feature 5 -->
+          <div
+            class="bg-darkbg rounded-2xl p-8 transition-all duration-300 hover:shadow-md"
+          >
+            <div
+              class="bg-gradient-to-br from-primary to-secondary rounded-xl w-14 h-14 flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-user-lock text-white text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Privacy Protected</h3>
+            <p class="text-gray-400">
+              We don't store your videos or personal information. Your privacy
+              is guaranteed.
+            </p>
+          </div>
+
+          <!-- Feature 6 -->
+          <div
+            class="bg-darkbg rounded-2xl p-8 transition-all duration-300 hover:shadow-md"
+          >
+            <div
+              class="bg-gradient-to-br from-primary to-secondary rounded-xl w-14 h-14 flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-server text-white text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Unlimited Downloads</h3>
+            <p class="text-gray-400">
+              No daily limits or restrictions. Download as many TikTok videos as
+              you need.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEO Content Section -->
+    <!-- SEO Content Section (Redesigned) -->
+    <section
+      class="py-20 bg-darkbg bg-gradient-to-br from-darkbg to-darkbg-lighter relative overflow-hidden"
+    >
+      <!-- Background decorative elements -->
+      <div
+        class="absolute top-20 left-10 w-72 h-72 rounded-full bg-primary/5 mix-blend-overlay filter blur-3xl"
+      ></div>
+      <div
+        class="absolute bottom-20 right-10 w-72 h-72 rounded-full bg-secondary/5 mix-blend-overlay filter blur-3xl"
+      ></div>
+
+      <div class="container mx-auto px-6 md:px-10 relative z-10">
+        <div class="max-w-3xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="font-display font-bold text-3xl md:text-4xl mb-4">
+              Everything You Need to Know About
+              <span
+                class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary"
+                >TikTok Video Downloads</span
+              >
+            </h2>
+            <p class="text-gray-400 max-w-xl mx-auto">
+              A complete guide to downloading and using TikTok content
+              responsibly
+            </p>
+          </div>
+
+          <!-- Content Cards -->
+          <div class="space-y-8">
+            <!-- Intro Card -->
+            <div
+              class="bg-darkbg-card rounded-2xl p-8 shadow-lg border border-gray-800 transform transition hover:border-primary/30 hover:shadow-glow-pink/10"
+            >
+              <div class="flex items-start mb-4">
+                <div
+                  class="bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg p-3 mr-4"
+                >
+                  <i class="fas fa-video text-primary text-xl"></i>
+                </div>
+                <p class="text-gray-300 text-lg">
+                  TikTok has become one of the most popular social media
+                  platforms worldwide, known for its short-form videos that
+                  capture trends, creativity, and entertainment. With millions
+                  of videos being created daily, you might want to save some of
+                  your favorites for offline viewing or to use in your own
+                  content creation. This is where TikVid Pro comes in - offering
+                  you a seamless way to download TikTok videos without
+                  watermarks, completely free.
+                </p>
+              </div>
+            </div>
+
+            <!-- Why Download Card -->
+            <div
+              class="bg-darkbg-card rounded-2xl p-8 shadow-lg border border-gray-800 transform transition hover:border-primary/30 hover:shadow-glow-pink/10"
+            >
+              <div class="flex items-center mb-6">
+                <div
+                  class="bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg p-3 mr-4"
+                >
+                  <i class="fas fa-question text-primary text-xl"></i>
+                </div>
+                <h3 class="font-bold text-xl">Why Download TikTok Videos?</h3>
+              </div>
+
+              <p class="text-gray-300 mb-6">
+                There are numerous reasons why you might want to download TikTok
+                videos:
+              </p>
+
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div class="flex items-start">
+                  <div class="text-secondary mr-3 mt-1">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <p class="text-gray-300">
+                    Save inspirational content for offline viewing when you
+                    don't have internet access
+                  </p>
+                </div>
+                <div class="flex items-start">
+                  <div class="text-secondary mr-3 mt-1">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <p class="text-gray-300">
+                    Create compilations of your favorite TikTok creators
+                  </p>
+                </div>
+                <div class="flex items-start">
+                  <div class="text-secondary mr-3 mt-1">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <p class="text-gray-300">
+                    Use TikTok content for educational purposes or presentations
+                  </p>
+                </div>
+                <div class="flex items-start">
+                  <div class="text-secondary mr-3 mt-1">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <p class="text-gray-300">
+                    Archive trending content before it potentially disappears
+                  </p>
+                </div>
+                <div class="flex items-start sm:col-span-2">
+                  <div class="text-secondary mr-3 mt-1">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <p class="text-gray-300">
+                    Repurpose content for other social media platforms (with
+                    proper attribution)
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Watermark Challenges Card -->
+            <div
+              class="bg-darkbg-card rounded-2xl p-8 shadow-lg border border-gray-800 transform transition hover:border-primary/30 hover:shadow-glow-pink/10"
+            >
+              <div class="flex items-center mb-6">
+                <div
+                  class="bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg p-3 mr-4"
+                >
+                  <i class="fas fa-ban text-primary text-xl"></i>
+                </div>
+                <h3 class="font-bold text-xl">
+                  The Challenge of TikTok Watermarks
+                </h3>
+              </div>
+
+              <div class="flex flex-col md:flex-row gap-8 items-center">
+                <div class="w-full md:w-2/3">
+                  <p class="text-gray-300">
+                    When you download videos directly from TikTok, they come
+                    with a watermark that includes the creator's username and
+                    the TikTok logo. While this helps with attribution, it can
+                    be distracting if you're using the video for personal
+                    viewing or other creative projects.
+                    <br /><br />
+                    <span class="text-secondary font-medium"
+                      >TikVid Pro solves this problem</span
+                    >
+                    by removing the watermark while maintaining the full video
+                    quality.
+                  </p>
+                </div>
+                <div class="w-full md:w-1/3 flex justify-center">
+                  <div
+                    class="relative w-40 h-72 bg-darkbg rounded-xl overflow-hidden border border-gray-700"
+                  >
+                    <div
+                      class="absolute bottom-0 left-0 right-0 bg-darkbg-lighter p-2 text-xs text-gray-400 flex justify-between"
+                    >
+                      <span>@username</span>
+                      <i class="fab fa-tiktok"></i>
+                    </div>
+                    <div class="absolute top-0 right-0 m-2">
+                      <div class="relative">
+                        <div
+                          class="h-6 w-6 bg-red-500 rounded-full flex items-center justify-center text-white"
+                        >
+                          <i class="fas fa-times text-xs"></i>
+                        </div>
+                        <div
+                          class="absolute -top-1 -right-1 h-8 w-8 rounded-full border-2 border-red-500 animate-ping opacity-50"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Legal Card -->
+            <div
+              class="bg-darkbg-card rounded-2xl p-8 shadow-lg border border-gray-800 transform transition hover:border-primary/30 hover:shadow-glow-pink/10"
+            >
+              <div class="flex items-center mb-6">
+                <div
+                  class="bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg p-3 mr-4"
+                >
+                  <i class="fas fa-balance-scale text-primary text-xl"></i>
+                </div>
+                <h3 class="font-bold text-xl">
+                  Is Downloading TikTok Videos Legal?
+                </h3>
+              </div>
+
+              <p class="text-gray-300 mb-6">
+                While downloading TikTok videos for personal use is generally
+                acceptable, it's important to remember that the content creators
+                own the rights to their videos. If you plan to use the
+                downloaded videos for anything beyond personal viewing, you
+                should:
+              </p>
+
+              <div class="bg-darkbg rounded-xl p-6">
+                <div class="grid sm:grid-cols-2 gap-4">
+                  <div class="flex items-start">
+                    <div
+                      class="bg-secondary/20 h-8 w-8 rounded-full flex items-center justify-center mr-3 flex-shrink-0"
+                    >
+                      <i class="fas fa-user-check text-secondary"></i>
+                    </div>
+                    <p class="text-gray-300">
+                      Always credit the original creator
+                    </p>
+                  </div>
+                  <div class="flex items-start">
+                    <div
+                      class="bg-red-500/20 h-8 w-8 rounded-full flex items-center justify-center mr-3 flex-shrink-0"
+                    >
+                      <i class="fas fa-exclamation-triangle text-red-500"></i>
+                    </div>
+                    <p class="text-gray-300">
+                      Never claim the content as your own
+                    </p>
+                  </div>
+                  <div class="flex items-start">
+                    <div
+                      class="bg-yellow-500/20 h-8 w-8 rounded-full flex items-center justify-center mr-3 flex-shrink-0"
+                    >
+                      <i class="fas fa-comments text-yellow-500"></i>
+                    </div>
+                    <p class="text-gray-300">
+                      Consider asking for permission if using commercially
+                    </p>
+                  </div>
+                  <div class="flex items-start">
+                    <div
+                      class="bg-green-500/20 h-8 w-8 rounded-full flex items-center justify-center mr-3 flex-shrink-0"
+                    >
+                      <i class="fas fa-book text-green-500"></i>
+                    </div>
+                    <p class="text-gray-300">
+                      Follow fair use guidelines if applicable
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quality & Advantages (Combined Card) -->
+            <div class="grid md:grid-cols-2 gap-8">
+              <!-- Quality Card -->
+              <div
+                class="bg-darkbg-card rounded-2xl p-8 shadow-lg border border-gray-800 transform transition hover:border-primary/30 hover:shadow-glow-pink/10"
+              >
+                <div class="flex items-center mb-6">
+                  <div
+                    class="bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg p-3 mr-4"
+                  >
+                    <i class="fas fa-medal text-primary text-xl"></i>
+                  </div>
+                  <h3 class="font-bold text-xl">
+                    How TikVid Pro Ensures Quality
+                  </h3>
+                </div>
+
+                <p class="text-gray-300">
+                  Our service is designed to provide the highest quality TikTok
+                  downloads possible. We preserve the original video resolution,
+                  ensuring that you get crisp, clear footage without compression
+                  artifacts.
+                </p>
+
+                <div class="mt-6 flex justify-center">
+                  <div class="relative w-16 h-16">
+                    <div
+                      class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full animate-spin-slow opacity-30"
+                    ></div>
+                    <div
+                      class="absolute inset-1 bg-darkbg-card rounded-full flex items-center justify-center"
+                    >
+                      <i class="fas fa-check text-secondary text-xl"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Advantages Card -->
+              <div
+                class="bg-darkbg-card rounded-2xl p-8 shadow-lg border border-gray-800 transform transition hover:border-primary/30 hover:shadow-glow-pink/10"
+              >
+                <div class="flex items-center mb-6">
+                  <div
+                    class="bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg p-3 mr-4"
+                  >
+                    <i class="fas fa-star text-primary text-xl"></i>
+                  </div>
+                  <h3 class="font-bold text-xl">Advantages of No Watermark</h3>
+                </div>
+
+                <ul class="space-y-4">
+                  <li class="flex items-center">
+                    <div class="h-2 w-2 rounded-full bg-primary mr-2"></div>
+                    <span class="text-gray-300"
+                      >Cleaner, more professional appearance</span
+                    >
+                  </li>
+                  <li class="flex items-center">
+                    <div class="h-2 w-2 rounded-full bg-primary mr-2"></div>
+                    <span class="text-gray-300"
+                      >Better integration with other content</span
+                    >
+                  </li>
+                  <li class="flex items-center">
+                    <div class="h-2 w-2 rounded-full bg-primary mr-2"></div>
+                    <span class="text-gray-300"
+                      >No distractions from the actual content</span
+                    >
+                  </li>
+                  <li class="flex items-center">
+                    <div class="h-2 w-2 rounded-full bg-primary mr-2"></div>
+                    <span class="text-gray-300"
+                      >More flexibility for creative editing</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Privacy & Security Card -->
+            <div
+              class="bg-darkbg-card rounded-2xl p-8 shadow-lg border border-gray-800 transform transition hover:border-primary/30 hover:shadow-glow-pink/10"
+            >
+              <div class="flex items-center mb-6">
+                <div
+                  class="bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg p-3 mr-4"
+                >
+                  <i class="fas fa-shield-alt text-primary text-xl"></i>
+                </div>
+                <h3 class="font-bold text-xl">
+                  Privacy and Security: Our Commitment
+                </h3>
+              </div>
+
+              <p class="text-gray-300 mb-6">
+                At TikVid Pro, we prioritize user privacy and security. When you
+                use our service:
+              </p>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-darkbg rounded-lg p-4 flex">
+                  <div class="mr-3 text-secondary text-xl">
+                    <i class="fas fa-lock"></i>
+                  </div>
+                  <p class="text-gray-300">
+                    We don't store your downloaded videos on our servers
+                  </p>
+                </div>
+                <div class="bg-darkbg rounded-lg p-4 flex">
+                  <div class="mr-3 text-secondary text-xl">
+                    <i class="fas fa-user-secret"></i>
+                  </div>
+                  <p class="text-gray-300">
+                    No personal information is collected beyond what's necessary
+                  </p>
+                </div>
+                <div class="bg-darkbg rounded-lg p-4 flex">
+                  <div class="mr-3 text-secondary text-xl">
+                    <i class="fas fa-user-shield"></i>
+                  </div>
+                  <p class="text-gray-300">
+                    Your TikTok account details are never required or accessed
+                  </p>
+                </div>
+                <div class="bg-darkbg rounded-lg p-4 flex">
+                  <div class="mr-3 text-secondary text-xl">
+                    <i class="fas fa-lock-open"></i>
+                  </div>
+                  <p class="text-gray-300">
+                    All connections are secure and encrypted
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Conclusion Card -->
+            <div
+              class="bg-gradient-to-br from-darkbg-card to-darkbg rounded-2xl p-8 shadow-lg border border-primary/20"
+            >
+              <div class="flex items-center space-x-3 mb-6">
+                <div
+                  class="h-10 w-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center"
+                >
+                  <i class="fas fa-arrow-down text-white text-lg"></i>
+                </div>
+                <h3 class="font-bold text-xl">Start Downloading Today</h3>
+              </div>
+
+              <p class="text-gray-300 mb-6">
+                Our TikTok downloader service is continuously updated to stay
+                compatible with TikTok's latest features and video formats,
+                ensuring you always get the best downloading experience
+                possible. Whether you're a casual TikTok viewer or a content
+                creator looking to repurpose videos, TikVid Pro provides the
+                tools you need to download TikTok videos without watermark
+                quickly and easily.
+              </p>
+
+              <div class="flex justify-center mt-4">
+                <a
+                  href="#top"
+                  class="bg-gradient-to-r from-primary to-secondary hover:from-primary-dark hover:to-secondary-dark text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-glow transform hover:-translate-y-1 flex items-center space-x-2"
+                >
+                  <span>Try It Now</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Last Updated Info -->
+          <div class="mt-10 text-center text-gray-500 text-sm">
+            <p>Last Updated: 2025-03-01 | Author: TikVid Pro Team</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Custom animations for this section -->
+      <style>
+        @keyframes spin-slow {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+        .animate-spin-slow {
+          animation: spin-slow 8s linear infinite;
+        }
+      </style>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-darkbg-lighter">
+      <div class="container mx-auto px-6 md:px-10">
+        <div class="text-center mb-16">
+          <h2 class="font-display font-bold text-3xl md:text-4xl mb-4">
+            Frequently Asked <span class="text-primary">Questions</span>
+          </h2>
+          <p class="text-gray-400 max-w-2xl mx-auto">
+            Find answers to the most common questions about our TikTok
+            downloader service.
+          </p>
+        </div>
+
+        <div class="max-w-3xl mx-auto">
+          <!-- FAQ Item 1 -->
+          <div class="mb-6 bg-darkbg rounded-xl overflow-hidden">
+            <button
+              class="w-full py-4 px-6 text-left font-bold flex justify-between items-center hover:bg-darkbg-card transition-colors duration-200"
+            >
+              <span>Is TikVid Pro completely free to use?</span>
+              <i
+                class="fas fa-chevron-down text-primary transition-transform duration-200"
+              ></i>
+            </button>
+            <div
+              class="px-6 py-4 border-t border-gray-800 bg-darkbg-card hidden"
+            >
+              <p class="text-gray-300">
+                Yes, TikVid Pro is completely free to use. We don't charge any
+                fees or require any subscriptions. You can download as many
+                TikTok videos as you want without watermarks at no cost.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="mb-6 bg-darkbg rounded-xl overflow-hidden">
+            <button
+              class="w-full py-4 px-6 text-left font-bold flex justify-between items-center hover:bg-darkbg-card transition-colors duration-200"
+            >
+              <span>How do I download TikTok videos without watermark?</span>
+              <i
+                class="fas fa-chevron-down text-primary transition-transform duration-200"
+              ></i>
+            </button>
+            <div
+              class="px-6 py-4 border-t border-gray-800 bg-darkbg-card hidden"
+            >
+              <p class="text-gray-300">
+                Simply copy the link of the TikTok video you want to download,
+                paste it in the input field at the top of our website, and click
+                "Download Now". Our system will process the video and remove the
+                watermark automatically.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="mb-6 bg-darkbg rounded-xl overflow-hidden">
+            <button
+              class="w-full py-4 px-6 text-left font-bold flex justify-between items-center hover:bg-darkbg-card transition-colors duration-200"
+            >
+              <span>Is it legal to download TikTok videos?</span>
+              <i
+                class="fas fa-chevron-down text-primary transition-transform duration-200"
+              ></i>
+            </button>
+            <div
+              class="px-6 py-4 border-t border-gray-800 bg-darkbg-card hidden"
+            >
+              <p class="text-gray-300">
+                Downloading TikTok videos for personal use is generally
+                acceptable. However, if you plan to republish or use the content
+                commercially, you should get permission from the original
+                creator and always provide proper attribution.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="mb-6 bg-darkbg rounded-xl overflow-hidden">
+            <button
+              class="w-full py-4 px-6 text-left font-bold flex justify-between items-center hover:bg-darkbg-card transition-colors duration-200"
+            >
+              <span>What video quality can I download?</span>
+              <i
+                class="fas fa-chevron-down text-primary transition-transform duration-200"
+              ></i>
+            </button>
+            <div
+              class="px-6 py-4 border-t border-gray-800 bg-darkbg-card hidden"
+            >
+              <p class="text-gray-300">
+                TikVid Pro allows you to download videos in the highest quality
+                available from the original source, up to full HD (1080p). You
+                can also choose from different quality options if you prefer a
+                smaller file size.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <div class="mb-6 bg-darkbg rounded-xl overflow-hidden">
+            <button
+              class="w-full py-4 px-6 text-left font-bold flex justify-between items-center hover:bg-darkbg-card transition-colors duration-200"
+            >
+              <span>Can I download private TikTok videos?</span>
+              <i
+                class="fas fa-chevron-down text-primary transition-transform duration-200"
+              ></i>
+            </button>
+            <div
+              class="px-6 py-4 border-t border-gray-800 bg-darkbg-card hidden"
+            >
+              <p class="text-gray-300">
+                No, TikVid Pro can only download publicly available TikTok
+                videos. Private videos are protected by TikTok's privacy
+                settings and cannot be accessed by our service.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 6 -->
+          <div class="mb-6 bg-darkbg rounded-xl overflow-hidden">
+            <button
+              class="w-full py-4 px-6 text-left font-bold flex justify-between items-center hover:bg-darkbg-card transition-colors duration-200"
+            >
+              <span>Do I need to create an account to use TikVid Pro?</span>
+              <i
+                class="fas fa-chevron-down text-primary transition-transform duration-200"
+              ></i>
+            </button>
+            <div
+              class="px-6 py-4 border-t border-gray-800 bg-darkbg-card hidden"
+            >
+              <p class="text-gray-300">
+                No, you don't need to create an account or provide any personal
+                information to use our service. Simply paste the TikTok video
+                URL and download your video instantly.
+              </p>
+            </div>
+          </div>
+          
+          <!-- FAQ Item 7 -->
+
+<div class="mb-6 bg-darkbg rounded-xl overflow-hidden">
+    <button class="w-full py-4 px-6 text-left font-bold flex justify-between items-center hover:bg-darkbg-card transition-colors duration-200">
+        <span>Where is TikVid Pro's office located?</span>
+        <i class="fas fa-chevron-down text-primary transition-transform duration-200"></i>
+    </button>
+    <div class="px-6 py-4 border-t border-gray-800 bg-darkbg-card hidden">
+        <p class="text-gray-300">Our headquarters is located in the cloud! As a digital-first company, our team works remotely from across the globe to provide you with the best TikTok downloading experience possible. Our servers are hosted in "Meme Valley" where the internet never sleeps and downloads are always lightning fast.</p>
+    </div>
+</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-darkbg">
+      <div class="container mx-auto px-6 md:px-10">
+        <div class="text-center mb-16">
+          <h2 class="font-display font-bold text-3xl md:text-4xl mb-4">
+            What Our <span class="text-primary">Users Say</span>
+          </h2>
+          <p class="text-gray-400 max-w-2xl mx-auto">
+            Thousands of happy users download TikTok videos with TikVid Pro
+            every day.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Testimonial 1 -->
+          <div class="bg-darkbg-lighter rounded-2xl p-8 relative">
+            <div class="absolute top-4 right-4">
+              <i
+                class="fas fa-quote-right text-4xl text-primary opacity-20"
+              ></i>
+            </div>
+            <div class="mb-4 flex">
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+            </div>
+            <p class="text-gray-300 mb-6">
+              "This is by far the best TikTok downloader I've used. It's so fast
+              and the videos come out in perfect quality without any watermarks.
+              Love it!"
+            </p>
+            <div class="flex items-center">
+              <div
+                class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold mr-3"
+              >
+                JD
+              </div>
+              <div>
+                <h4 class="font-bold">James Davis</h4>
+                <p class="text-gray-400 text-sm">Content Creator</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="bg-darkbg-lighter rounded-2xl p-8 relative">
+            <div class="absolute top-4 right-4">
+              <i
+                class="fas fa-quote-right text-4xl text-primary opacity-20"
+              ></i>
+            </div>
+            <div class="mb-4 flex">
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+            </div>
+            <p class="text-gray-300 mb-6">
+              "I needed to download TikTok videos for a presentation, and TikVid
+              Pro made it incredibly easy. No watermarks and the quality is
+              excellent!"
+            </p>
+            <div class="flex items-center">
+              <div
+                class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold mr-3"
+              >
+                SM
+              </div>
+              <div>
+                <h4 class="font-bold">Sarah Miller</h4>
+                <p class="text-gray-400 text-sm">Digital Marketer</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="bg-darkbg-lighter rounded-2xl p-8 relative">
+            <div class="absolute top-4 right-4">
+              <i
+                class="fas fa-quote-right text-4xl text-primary opacity-20"
+              ></i>
+            </div>
+            <div class="mb-4 flex">
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+            </div>
+            <p class="text-gray-300 mb-6">
+              "I've tried several TikTok downloaders, but TikVid Pro is the
+              fastest and most reliable one. The videos are always high quality
+              and the interface is super easy to use."
+            </p>
+            <div class="flex items-center">
+              <div
+                class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold mr-3"
+              >
+                AK
+              </div>
+              <div>
+                <h4 class="font-bold">Alex Kim</h4>
+                <p class="text-gray-400 text-sm">Videographer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 md:py-24 bg-darkbg-lighter relative overflow-hidden">
+      <div class="container mx-auto px-6 md:px-10 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="font-display font-bold text-3xl md:text-5xl mb-6">
+            Ready to Download TikTok Videos
+            <span class="text-primary">Without Watermark?</span>
+          </h2>
+          <p class="text-gray-300 text-lg mb-10 max-w-2xl mx-auto">
+            Join thousands of users who trust TikVid Pro for high-quality,
+            watermark-free TikTok downloads. It's free, fast, and easy to use!
+          </p>
+
+          <a
+            href="#top"
+            class="inline-block bg-gradient-to-r from-primary to-secondary hover:from-primary-dark hover:to-secondary-dark text-white font-bold py-4 px-10 rounded-xl transition-all duration-300 hover:shadow-glow transform hover:-translate-y-1"
+          >
+            Start Downloading Now
+          </a>
+        </div>
+      </div>
+
+      <!-- Background elements -->
+      <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
+        <div
+          class="absolute -top-40 -right-40 w-80 h-80 bg-primary rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse-slow"
+        ></div>
+        <div
+          class="absolute -bottom-40 -left-40 w-80 h-80 bg-secondary rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse-slow"
+        ></div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darkbg py-16 border-t border-gray-800">
+      <div class="container mx-auto px-6 md:px-10">
+        <div class="grid md:grid-cols-4 gap-12">
+          <!-- Column 1 - Logo and About -->
+          <div>
+            <div class="flex items-center space-x-2 mb-6">
+              <div
+                class="h-10 w-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center"
+              >
+                <i class="fas fa-arrow-down text-white text-lg"></i>
+              </div>
+              <a href="#" class="font-display font-bold text-xl md:text-2xl">
+                Tik<span class="text-primary">Vid</span>
+                <span class="text-secondary">Pro</span>
+              </a>
+            </div>
+
+            <p class="text-gray-400 mb-6">
+              The fastest and most reliable way to download TikTok videos
+              without watermark in HD quality.
+            </p>
+
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="h-10 w-10 rounded-full bg-darkbg-lighter flex items-center justify-center text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="h-10 w-10 rounded-full bg-darkbg-lighter flex items-center justify-center text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 2 - Quick Links -->
+          <div>
+            <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#how-it-works"
+                  class="text-gray-400 hover:text-secondary transition-colors duration-300"
+                  >How It Works</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#features"
+                  class="text-gray-400 hover:text-secondary transition-colors duration-300"
+                  >Features</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#faq"
+                  class="text-gray-400 hover:text-secondary transition-colors duration-300"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-gray-400 hover:text-secondary transition-colors duration-300"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 3 - Legal -->
+          <div>
+            <h4 class="text-lg font-bold mb-6">Legal</h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="/terms.html"
+                  class="text-gray-400 hover:text-secondary transition-colors duration-300"
+                  >Terms of Service</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/privacy.html"
+                  class="text-gray-400 hover:text-secondary transition-colors duration-300"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/dmca.html"
+                  class="text-gray-400 hover:text-secondary transition-colors duration-300"
+                  >DMCA</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4 - Contact -->
+          <div>
+            <h4 class="text-lg font-bold mb-6 md:whitespace-break-spaces whitespace-pre-wrap">Contact Us</h4>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <i class="fas fa-envelope text-secondary mt-1 mr-3"></i>
+                <span class="text-gray-400">contact.dry528@passinbox.com</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-map-marker-alt text-secondary mt-1 mr-3"></i>
+                <span class="text-gray-400"
+                  >42 Download Avenue, Viral City, Internet Island 12345 (What you will do with my address 😁)</span
+                >
+              </li>
+              <li id="contact" class="flex items-start">
+                <i class="fas fa-headset text-secondary mt-1 mr-3"></i>
+                <span class="text-gray-400">24/7 Support by our AI assistants "Tik" and "Tok"</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm"
+        >
+          <p>
+            © 2025 TikVid Pro. All rights reserved.
+          </p>
+          <p class="mt-2">Not affiliated with TikTok or ByteDance Ltd.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a
+      href="#"
+      id="back-to-top"
+      class="fixed bottom-6 right-6 z-50 bg-primary hover:bg-primary-dark text-white rounded-full p-3 shadow-lg transition-all duration-300 transform hover:-translate-y-1 opacity-0 invisible"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Simple JavaScript for Interactivity -->
+    <script>
+      // Toggle FAQ items
+      document
+        .querySelectorAll(".bg-darkbg.rounded-xl button")
+        .forEach((button) => {
+          button.addEventListener("click", () => {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector(".fas.fa-chevron-down");
+
+            // Toggle content visibility
+            if (content.classList.contains("hidden")) {
+              content.classList.remove("hidden");
+              icon.style.transform = "rotate(180deg)";
+            } else {
+              content.classList.add("hidden");
+              icon.style.transform = "rotate(0)";
+            }
+          });
+        });
+
+// Mobile menu toggle
+const mobileMenuButton = document.querySelector(".md\\:hidden.text-white");
+const mobileMenu = document.querySelector(".hidden.bg-darkbg-card.fixed");
+const mobileMenuCloseButton = document.querySelector(".absolute.top-6.right-6");
+
+if (mobileMenuButton && mobileMenu && mobileMenuCloseButton) {
+  // Toggle menu visibility when the menu button is clicked
+  mobileMenuButton.addEventListener("click", () => {
+    // Check if the menu is currently hidden
+    const isHidden = mobileMenu.classList.contains("hidden");
+    
+    // If hidden, show it. Otherwise, leave it as is (the close button handles hiding)
+    if (isHidden) {
+      mobileMenu.classList.remove("hidden");
+    }
+  });
+
+  // Hide menu when the close button is clicked
+  mobileMenuCloseButton.addEventListener("click", () => {
+    mobileMenu.classList.add("hidden");
+  });
+
+  // Close menu when clicking on a link
+  mobileMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden");
+    });
+  });
+  
+  // Close menu when clicking outside the menu (optional enhancement)
+  document.addEventListener("click", (event) => {
+    // Check if the menu is visible and the click was outside the menu and not on the menu button
+    if (
+      !mobileMenu.classList.contains("hidden") && 
+      !mobileMenu.contains(event.target) &&
+      !mobileMenuButton.contains(event.target)
+    ) {
+      mobileMenu.classList.add("hidden");
+    }
+  });
+}
+
+      // Back to top button
+      const backToTopButton = document.getElementById("back-to-top");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          backToTopButton.classList.remove("opacity-0", "invisible");
+          backToTopButton.classList.add("opacity-100", "visible");
+        } else {
+          backToTopButton.classList.add("opacity-0", "invisible");
+          backToTopButton.classList.remove("opacity-100", "visible");
+        }
+      });
+
+      // Form submission handling (placeholder - would need backend processing)
+      const downloadForm = document.getElementById("download-form");
+
+      if (downloadForm) {
+        downloadForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const input = downloadForm.querySelector("input");
+
+          if (!input.value.trim()) {
+            alert("Please enter a valid TikTok video URL.");
+            return;
+          }
+
+          // This would be replaced with actual processing
+          window.location.href = `https://ytdlp-downloader.onrender.com/?url=${input.value.trim()}`;
+          
+        });
+      }
+    </script>
+  </body>
+</html>
