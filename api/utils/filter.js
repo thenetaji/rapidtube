@@ -23,7 +23,7 @@ function filter(meta = {}) {
     })
     .map(item => ({
       extension: item.ext,
-      filesize: item.filesize || item.filesize_approx
+      filesize: item.filesize || item.filesize_approx,
     }));
 
   return {

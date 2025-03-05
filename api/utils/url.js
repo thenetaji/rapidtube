@@ -16,8 +16,9 @@ function extractId(videoUrl) {
 }
 
 function isYouTubeURL(url) {
-  const youtubeRegex = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)(\/.*)?$/;
+  const youtubeRegex =
+    /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)(\/.*)?$/;
   return youtubeRegex.test(url);
-};
+}
 
-export { extractId,isYouTubeURL };
+export { extractId, isYouTubeURL };

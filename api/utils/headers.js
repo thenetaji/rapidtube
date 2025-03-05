@@ -7,23 +7,23 @@ function injectHeaders(res, meta, __format) {
 
   const contentSize = () => {
     let size = meta.formats.filter(item => item.format_id == __format)[0]
-        .filesize;
+      .filesize;
     return size;
   };
 
   const contentType = (meta, __format) => {
-  if (!meta || !meta.formats || !meta.info) {
-    return "video/mp4";
-  }
+    if (!meta || !meta.formats || !meta.info) {
+      return "video/mp4";
+    }
 
-  const format = meta.formats.find(item => item.format_id === __format);
-  if (!format) {
-    return "video/mp4";
-  }
+    const format = meta.formats.find(item => item.format_id === __format);
+    if (!format) {
+      return "video/mp4";
+    }
 
-  const extension = format.extension || "mp4";
-  return meta.info.audioOnly ? `audio/${extension}` : `video/${extension}`;
-};
+    const extension = format.extension || "mp4";
+    return meta.info.audioOnly ? `audio/${extension}` : `video/${extension}`;
+  };
 
   res.setHeader(
     "Content-Disposition",

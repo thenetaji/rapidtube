@@ -79,7 +79,9 @@ Made significant changes to React components.
 
 Removed YouTube support due to policy constraints. This may be the final patch for this project.
 
+[02/03/25]
 
+Making seperate website for different services and for this changed the structure of the project but every frontend will eventually use same backend.. And instead of hosting on server I will host them as serverless function
 
 ---
 
