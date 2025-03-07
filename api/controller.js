@@ -94,7 +94,7 @@ async function downloadHandler(req, res) {
       });
     }
     
-    injectHeaders(res, cachedMetadata);
+    injectHeaders(res, cachedMetadata , type, undefined);
 
     log.info("Starting download for URL: " + url);
     await downloadContent(url, type, res);

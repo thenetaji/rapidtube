@@ -1,20 +1,21 @@
 import winston, { format } from "winston";
 const { combine, colorize, printf, timestamp } = format;
 
-export function injectHeaders(res, query, contentLength = undefined) {
+export function injectHeaders(res, query, type, contentLength = undefined) {
   const { title } = query;
   
-  const encodedFilename = encodeURIComponent(
-    sanitizeFilename(`TikDL - ${filename}`));
+  // Sanitize the title and prepare filenames
+  const sanitizedTitle = sanitizeFilename(`TikDL - ${title}`);
+  const encodedFilename = encodeURIComponent(sanitizedTitle);
 
   res.setHeader(
     "Content-Disposition",
-    `attachment; filename="${encodedFilename}"; filename*=UTF-8''${encodedFilename}`,
+    `attachment; filename="${sanitizedTitle}"; filename*=UTF-8''${encodedFilename}`
   );
-  res.setHeader("Content-Type","video/mp4");
+  res.setHeader("Content-Type", `${type == "video" ? "video/mp4"  : "audio/mp3"}`);
   res.setHeader("Transfer-Encoding", "chunked");
-  
-  if(contentLength){
+
+  if (contentLength) {
     res.setHeader("Content-Length", contentLength);
   }
 }
