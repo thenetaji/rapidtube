@@ -2,13 +2,7 @@ import { spawn } from "child_process";
 
 function getMetaInfo(url) {
   return new Promise((resolve, reject) => {
-    const options = [
-      "--skip-download",
-      "--dump-json",
-      "--user-agent",
-      "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-      url,
-    ];
+    const options = ["--skip-download", "--dump-json", url];
 
     const shell = spawn("yt-dlp", options);
     let output = "";

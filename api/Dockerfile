@@ -14,7 +14,7 @@ RUN python3 -m venv /opt/venv && \
 ENV PATH="/opt/venv/bin:$PATH"
 
 # Set working directory for your Node.js application
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # Copy package.json files and install Node dependencies
 COPY package*.json ./

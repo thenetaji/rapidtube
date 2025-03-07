@@ -2,16 +2,16 @@ import express from "express";
 import cors from "cors";
 import expressRateLimit from "express-rate-limit";
 import helmet from "helmet";
-import routes from "./route.js";
+import { metaHandler, downloadHandler } from "./controller.js";
 const app = express();
+
 
 //middlewares
 const corsOptions = {
-  origin: ["https://rapidtubepro.web.app", "https://rapidtubepro.firebase.app"],
+  origin: ["*"],
 };
 app.use(cors(corsOptions));
 app.options("*", cors(corsOptions));
-app.set("trust proxy", 1);
 app.use(helmet());
 app.use(
   expressRateLimit({
@@ -25,7 +25,11 @@ app.use(
 app.use(express.json());
 
 //routes
-app.use("/api", routes);
+app.get("/api/meta", metaHandler);
+app.get("/api/download", downloadHandler);
+app.get("/api/status", (req, res) => {
+  return res.status(200).end("OK");
+});
 
 //server initialization
 const port = process.env.PORT || 2626;

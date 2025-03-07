@@ -17,8 +17,10 @@
     "express-rate-limit": "^7.4.1",
     "helmet": "^8.0.0",
     "hono": "^4.7.2",
+    "node-cache": "^5.1.2",
     "redis": "^4.7.0",
-    "user-agents": "^1.1.466"
+    "user-agents": "^1.1.466",
+    "winston": "^3.17.0"
   },
   "author": "Netaji",
   "license": "ISC",

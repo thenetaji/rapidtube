@@ -1,17 +1,16 @@
 import { spawn } from "child_process";
 
-async function downloadContent(url, format_id, res) {
+async function downloadContent(url, type, res) {
   try {
     const options = [
-      "--format",
-      "best",
-      "-o",
-      "-",
-      "--restrict-filename",
-      "--user-agent",
-      "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-      url,
-    ];
+      "-o", "-", 
+      "--restrict-filename", url];
+    
+    if(type == "audio"){
+      options.push("--extract-audio");
+    } else if(type == "video"){
+      //do nothing
+    }
 
     const shell = spawn("yt-dlp", options);
 
