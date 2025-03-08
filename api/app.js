@@ -5,7 +5,6 @@ import helmet from "helmet";
 import { metaHandler, downloadHandler } from "./controller.js";
 const app = express();
 
-
 //middlewares
 const corsOptions = {
   origin: ["*"],

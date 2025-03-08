@@ -1,18 +1,15 @@
 import winston, { format } from "winston";
 const { combine, colorize, printf, timestamp } = format;
 
-export function injectHeaders(res, query, type, contentLength = undefined) {
-  const { title } = query;
-  
-  // Sanitize the title and prepare filenames
-  const sanitizedTitle = sanitizeFilename(`TikDL - ${title}`);
-  const encodedFilename = encodeURIComponent(sanitizedTitle);
-
+export function injectHeaders(res, type, contentLength = undefined) {
+  const encodedFilename = encodeURIComponent(
+    "TokDL-" + Math.random().toString().slice(2),
+  );
   res.setHeader(
     "Content-Disposition",
-    `attachment; filename="${sanitizedTitle}"; filename*=UTF-8''${encodedFilename}`
+    `attachment; filename="TokDL-${Math.random().toString().slice(2)}"; filename*=UTF-8''${encodedFilename}`,
   );
-  res.setHeader("Content-Type", `${type == "video" ? "video/mp4"  : "audio/mp3"}`);
+  res.setHeader("Content-Type", type === "video" ? "video/mp4" : "audio/mp3");
   res.setHeader("Transfer-Encoding", "chunked");
 
   if (contentLength) {
@@ -45,7 +42,7 @@ export function filterMetaInfo(info) {
     title: info.title,
     duration: info.duration,
     uploader: info.uploader,
-    thumbnails: info.thumbnails.map(thumbnail => ({
+    thumbnails: info.thumbnails.map((thumbnail) => ({
       url: thumbnail.url,
       preference: thumbnail.preference,
     })),
@@ -54,14 +51,15 @@ export function filterMetaInfo(info) {
 }
 
 export const checkURL = (url) => {
-  const youtubePattern = /^(https?:\/\/)?(www\.)?(youtube|youtu|youtube-nocookie)\.(com|be)\/(watch\?v=|embed\/|v\/|e\/|.+[?&]v=)[a-zA-Z0-9_-]{11}.*$/;
+  const youtubePattern =
+    /^(https?:\/\/)?(www\.)?(youtube|youtu|youtube-nocookie)\.(com|be)\/(watch\?v=|embed\/|v\/|e\/|.+[?&]v=)[a-zA-Z0-9_-]{11}.*$/;
 
   if (youtubePattern.test(url)) {
     return false;
-} else {
-  return true;
-}
-}
+  } else {
+    return true;
+  }
+};
 
 export const log = winston.createLogger({
   level: "silly",

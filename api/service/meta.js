@@ -8,15 +8,15 @@ function getMetaInfo(url) {
     let output = "";
     let errorOutput = "";
 
-    shell.stdout.on("data", data => {
+    shell.stdout.on("data", (data) => {
       output += data.toString();
     });
 
-    shell.stderr.on("data", error => {
+    shell.stderr.on("data", (error) => {
       errorOutput += error.toString();
     });
 
-    shell.on("close", code => {
+    shell.on("close", (code) => {
       if (code !== 0) {
         console.error("Error:", code, errorOutput);
         reject(errorOutput);
@@ -25,7 +25,7 @@ function getMetaInfo(url) {
       }
     });
 
-    shell.on("error", error => {
+    shell.on("error", (error) => {
       console.error("Error starting DLP:", error);
       reject(new Error(error));
     });

@@ -1,7 +1,7 @@
 import getMetaInfo from "./service/meta.js";
 import downloadContent from "./service/download.js";
 import { filterMetaInfo, injectHeaders, checkURL, log } from "./utils.js";
-import NodeCache from 'node-cache';
+import NodeCache from "node-cache";
 
 const metadataCache = new NodeCache({ stdTTL: 600 }); // Cache for 10 minutes
 
@@ -83,18 +83,8 @@ async function downloadHandler(req, res) {
         data: null,
       });
     }
-    
-    const cachedMetadata = metadataCache.get(url);
-    log.debug("cached data recieved", cachedMetadata);
-    if(!cachedMetadata){
-      return res.status(500).json({
-        status: 500,
-        error: "session expired, try again",
-        data: null,
-      });
-    }
-    
-    injectHeaders(res, cachedMetadata , type, undefined);
+
+    injectHeaders(res, type, undefined);
 
     log.info("Starting download for URL: " + url);
     await downloadContent(url, type, res);
