@@ -1,20 +1,14 @@
 import winston, { format } from "winston";
 const { combine, colorize, printf, timestamp } = format;
 
-export function injectHeaders(res, query, contentLength = undefined) {
-  const { title } = query;
-  
-  const encodedFilename = encodeURIComponent(
-    sanitizeFilename(`TikDL - ${filename}`));
+export function injectHeaders(res, type, contentLength = undefined) {
 
-  res.setHeader(
-    "Content-Disposition",
-    `attachment; filename="${encodedFilename}"; filename*=UTF-8''${encodedFilename}`,
-  );
-  res.setHeader("Content-Type","video/mp4");
+  const encodedFilename = encodeURIComponent('TokDL-' + Math.random().toString().slice(2));
+res.setHeader("Content-Disposition", `attachment; filename="TokDL-${Math.random().toString().slice(2)}"; filename*=UTF-8''${encodedFilename}`);
+  res.setHeader("Content-Type", type === "video" ? "video/mp4" : "audio/mp3");
   res.setHeader("Transfer-Encoding", "chunked");
-  
-  if(contentLength){
+
+  if (contentLength) {
     res.setHeader("Content-Length", contentLength);
   }
 }
@@ -32,6 +26,7 @@ export function sanitizeFilename(filename) {
     .replace(/^\.+|\.+$/g, "") // Remove leading/trailing dots
     .replace(/-+/g, "-"); // Replace multiple dashes with single dash
 }
+
 
 /**
  * Function to filter out specific data from the provided video info object

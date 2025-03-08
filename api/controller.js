@@ -84,17 +84,7 @@ async function downloadHandler(req, res) {
       });
     }
     
-    const cachedMetadata = metadataCache.get(url);
-    log.debug("cached data recieved", cachedMetadata);
-    if(!cachedMetadata){
-      return res.status(500).json({
-        status: 500,
-        error: "session expired, try again",
-        data: null,
-      });
-    }
-    
-    injectHeaders(res, cachedMetadata);
+    injectHeaders(res, type, undefined);
 
     log.info("Starting download for URL: " + url);
     await downloadContent(url, type, res);
